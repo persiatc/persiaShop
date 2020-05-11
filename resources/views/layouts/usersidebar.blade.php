@@ -11,7 +11,7 @@
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
                     <p class="breadcrumbs"><span class="ml-2"><a href="index.html">خانه</a></span></p>
-                    <h1 class="mb-0 bread">پروفایل کاربری</h1>
+                    <h1 class="mb-0 bread" style="color: #fd4f5b;">پروفایل کاربری</h1>
                 </div>
             </div>
         </div>
@@ -22,12 +22,13 @@
                 <div class="sidebar-box ftco-animate col-3 bg-primary">
                     <h3 class="heading" style=" text-align: center" >{{auth()->user()->name}}</h3>
                         <ul class="categories">
-                            <li><a href="userpanel">اطلاعات کاربری </a></li>
-                            <li><a href="useredit">ویرایش اطلاعات </a></li>
-                            <li><a href="/basket">سبد خرید </a></li>
-                            <li><a href="/favorite">لیست علاقمندی‌ها</a></li>
-                            <li><a href="/factor">خریدهای انجام شده</a></li>
-                            <li><a href="/support">گزارش مشکلات</a></li>
+                            <li style="width: 230px;"><a href="userpanel">اطلاعات کاربری</a></li><br>
+                            <li style="width: 230px;"><a href="useredit">ویرایش اطلاعات </a></li><br>
+                            <li style="width: 230px;"><a href="/basket">سبد خرید </a></li><br>
+                            <li style="width: 230px;"><a href="/favorite">لیست علاقمندی‌ها</a></li><br>
+                            <li style="width: 230px;"><a href="/factor">خریدهای انجام شده</a></li><br>
+                            <li style="width: 230px;"><a href="{{ route('factorfaild') }}">فاکتور های پرداخت نشده</a></li><br>
+                            <li style="width: 230px;"><a href="/support">گزارش مشکلات</a></li><br>
                             <li>
                                         @auth
                                     <a href="{{ route('logout') }}"

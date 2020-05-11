@@ -94,18 +94,21 @@
 
                     </li>
 
-
-                    <?php if ($baskets != null && count($baskets) > 0): ?>
                       <li class="nav-item cta cta-colored float-left">
                         <a href="/basket" id="shop-cart" class="nav-link">
                           <span class="icon-shopping_cart"></span>
+                          <span class="cart-count">
                           [{{count($baskets)}}]
+                          </span>
                         </a>
                       </li>
-                    <?php endif; ?>
                 @endauth
+                <?php if ($baskets != null && count($baskets) > 0): ?>
+                <?php endif; ?>
 
-                
+
+              
+          
                 <li class="nav-item cta cta-colored float-left">
                   <form class="form-inline nav-link">
                     {{csrf_field()}}

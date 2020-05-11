@@ -18,6 +18,8 @@ class BasketController extends Controller
     public function index()
     {
       $baskets=Basket::where('user_id', auth()->user()->id)->where('status', '0')->get();
+      // $baskets=Basket::where('user_id', auth()->user()->id)->get();
+
       return view('site.basket', compact('baskets'));
     }
 
@@ -42,7 +44,6 @@ class BasketController extends Controller
     {
       if($request->ajax()){
         $id=$request->input('id');
-        // dd($id);
         $product = Product::find($id);
         if(Basket::where([
           ['user_id','=',auth()->user()->id],
@@ -70,7 +71,7 @@ class BasketController extends Controller
      */
     public function show(Basket $basket)
     {
-        //
+      //
     }
 
     /**

@@ -48,7 +48,7 @@
 
                                 <td class="product-name">
                                     <h3>{{$product->name}}</h3>
-                                    <p>{{$product->body}}</p>
+                                    <p>{{!! $product->body !!}}</p>
                                 </td>
 
                                 <td class="price">{{$product->price}} تومان</td>
@@ -64,20 +64,7 @@
             </div>
         </div>
         <div class="row justify-content-end">
-            <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-                <div class="cart-total mb-3">
-                    <h3>کد تخفیف</h3>
-                    <p>کد تخفیف خود را وارد کنید</p>
-                    <form action="#" class="info">
-                        <div class="form-group">
-                            <label for="">استفاده از حروف کوچک و بزرگ الزامیست</label>
-                            <input type="text" class="form-control text-left px-3" placeholder="">
-                        </div>
-                    </form>
-                </div>
-                <p><a href="checkout.html" class="btn btn-primary py-3 px-4">تایید کد تخفیف</a></p>
-            </div>
-
+           
             <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
                 <div class="cart-total mb-3">
                     <h3>صورت حساب</h3>
@@ -97,7 +84,7 @@
                         <span>{{$sum - $discount}} تومان</span>
                     </p>
                 </div>
-                <p><a href="{{route('factor.create', ['request'=>$ids])}}" class="btn btn-primary py-3 px-4">پرداخت</a></p>
+                <p><a href="{{route('factor.create', ['request'=>$ids])}}" class="btn btn-primary py-3 px-4">ثبت سفارش</a></p>
             </div>
         </div>
     </div>

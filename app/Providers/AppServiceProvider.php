@@ -31,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
         $auth = auth()->user();
         if($auth != null){
           $baskets=Basket::where('user_id', auth()->user()->id)->where('status', '0')->get();
+          // $baskets=Basket::where('user_id', auth()->user()->id)->get();
           $view->with([
             'baskets'=>$baskets,
             'categories'=>$categories,

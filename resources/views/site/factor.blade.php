@@ -4,6 +4,13 @@
 
 <div class="sidebar-box ftco-animate col-9">
     
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success alert-block">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <strong>{{ $message }}</strong>
+    </div>
+    @endif
+
     <section class="ftco-section ftco-cart">
     <div class="container">
         <div class="row">

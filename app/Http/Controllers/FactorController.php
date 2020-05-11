@@ -6,6 +6,8 @@ use App\Factor;
 use App\Product;
 use App\Basket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Zarinpal\Zarinpal;
 
 class FactorController extends Controller
 {
@@ -16,7 +18,7 @@ class FactorController extends Controller
      */
     public function index()
     {
-        $factors = auth()->user()->factor()->orderBy('created_at', 'DESC')->get();
+        $factors = auth()->user()->factor()->where('status',"paid")->orderBy('created_at', 'DESC')->get();
         return view('site.factor', compact('factors'));
     }
 
@@ -27,26 +29,8 @@ class FactorController extends Controller
      */
     public function create(Request $request)
     {
-        $r = $request->all();
-        $ids = $r['request'];
-        $factor = Factor::create([
-              'user_id'=>auth()->user()->id,
-              'sum'=>0,
-              'status'=>1
-            ]);
-        $sum = 0;
-        for ($id = 0; $id < sizeof($ids); $id++){
-            $basket = Basket::find($ids[$id]);
-            $product = Product::find($basket->product_id);
-            $product->increment('sales_number');
-            $sum += (1-$product->discount/100)*$product->price;
-            $basket->update(['status' => 1]);
-            $product->factor()->attach($factor);
-        }
-        $factor->update(['sum'=>$sum]);
-        $factors = Factor::where('id', $factor->id)->get();
-//        dd($factors);
-        return view('site.factor', compact('factors'));
+        $baskets=Basket::where('user_id', auth()->user()->id)->where('status','=','0')->get();
+        return view('site.checkout', compact('baskets'));
         
         
     }
@@ -59,7 +43,35 @@ class FactorController extends Controller
      */
     public function store(Request $request)
     {
-        
+       
+
+        if($request->payment_method == "zarinpal") {
+
+            $r = $request->all();
+            $ids = $r['request'];
+            $factor = Factor::create([
+                'user_id'=>auth()->user()->id,
+                'sum'=>0,
+                'status'=>'pending'
+                ]);
+            $sum = 0;
+            for ($id = 0; $id < sizeof($ids); $id++){
+                $basket = Basket::find($ids[$id]);
+                $product = Product::find($basket->product_id);
+                $product->increment('sales_number');
+                $sum += (1-$product->discount/100)*$product->price;
+                $basket->update(['status' => 1]);
+                $product->factor()->attach($factor);
+            }
+            $factor->update(['sum'=>$sum]);
+            $factors = Factor::where('id', $factor->id)->get();
+            
+            $this->do_payment_zarinpal($factor);
+        }
+        else{
+            
+            return back()->with('err','لطفا روش پرداخت رو تایید کنید !');
+        }
     }
 
     /**
@@ -68,9 +80,9 @@ class FactorController extends Controller
      * @param  \App\Factor  $factor
      * @return \Illuminate\Http\Response
      */
-    public function show(Factor $factor)
+    public function show()
     {
-        //
+       //
     }
 
     /**
@@ -81,7 +93,7 @@ class FactorController extends Controller
      */
     public function edit(Factor $factor)
     {
-        dd($factor);
+        //
     }
 
     /**
@@ -104,6 +116,125 @@ class FactorController extends Controller
      */
     public function destroy(Factor $factor)
     {
-        //
+        $factor->delete();
+        session('success','فاکتور با شماره'.$factor->id.' باموفقیت حذف شد');
+        return redirect(route('factorfaild'));
+    }
+
+    public function showFaild() {
+
+        $factors = auth()->user()->factor()->where('status',"faild")->orderBy('created_at', 'DESC')->get();
+        return view('site.Faild_factor', compact('factors'));
+    }
+
+    public function do_payment_zarinpal($factor) {
+
+        $id = $factor['id'];
+        $zarinpal = new Zarinpal('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX');
+        $zarinpal->enableSandbox();                                 // active sandbox mod for test env
+        // $zarinpal->isZarinGate();                                // active zarinGate mode
+        $results = $zarinpal->request(
+            route('payment.zarinpal.callback',['id'=>$id]),         //required
+            $factor['sum'],                                         //required
+            'نام پرداخت کننده : '.$factor->user->name,              //required
+            $factor->user->email,                                   //optional
+            '09000000000',                                          //optional
+            [                                                       //optional
+                "Wages" => [
+                    "zp.1.1"=> [
+                        "Amount"=> 120,
+                        "Description"=> "part 1"
+                    ],
+                    "zp.2.5"=> [
+                        "Amount"=> 60,
+                        "Description"=> "part 2"
+                    ]
+                ]
+            ]
+        );
+        echo json_encode($results);
+        if (isset($results['Authority'])) {
+            file_put_contents('Authority', $results['Authority']);
+            $zarinpal->redirect();
+        }
+       
+    }
+    public function do_payment_zarinpal_faild($id){
+
+       $factor = Factor::find($id);
+        $zarinpal = new Zarinpal('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX');
+        $zarinpal->enableSandbox();                                 // active sandbox mod for test env
+        // $zarinpal->isZarinGate();                                // active zarinGate mode
+        $results = $zarinpal->request(
+            route('payment.zarinpal.callback',['id'=>$id]),         //required
+            $factor['sum'],                                         //required
+            'نام پرداخت کننده : '.$factor->user->name,              //required
+            $factor->user->email,                                   //optional
+            '09000000000',                                          //optional
+            [                                                       //optional
+                "Wages" => [
+                    "zp.1.1"=> [
+                        "Amount"=> 120,
+                        "Description"=> "part 1"
+                    ],
+                    "zp.2.5"=> [
+                        "Amount"=> 60,
+                        "Description"=> "part 2"
+                    ]
+                ]
+            ]
+        );
+        echo json_encode($results);
+        if (isset($results['Authority'])) {
+            file_put_contents('Authority', $results['Authority']);
+            $zarinpal->redirect();
+        }
+    }
+    public function Zarinpal_callback($id) {
+
+        $status = $_GET['Status'];
+        $authority= $_GET['Authority'];
+        if($status == "OK") {
+
+            $payment_data = array();
+            $payment_data['status'] = "payment success";
+            $payment_data['authority'] = $authority;
+            $payment_data['factor_id'] = $id;
+            $payment_id = DB::table('payments')
+            ->insertGetId($payment_data);
+
+            $factor = Factor::find($id);
+            $factor->status = "paid";
+            $factor->update();
+
+            $factors = Factor::where('id', $factor->id)->where('status',"paid")->get();
+            session('success','خرید شما انجام شد');
+            return view('site.factor', compact('factors'));
+
+            
+
+        }
+        elseif($status == "NOK") {
+
+            $payment_data = array();
+            $payment_data['status'] = "payment faild";
+            $payment_data['authority'] = $authority;
+            $payment_data['factor_id'] = $id;
+            $payment_id = DB::table('payments')
+            ->insertGetId($payment_data);
+
+            $factor = Factor::find($id);
+            $factor->status = "faild";
+            $factor->update();
+
+            $products = $factor->product()->get();
+            $user = auth()->user()->id;
+            foreach($products as $item) {
+                $basket = Basket::where('product_id',$item->id)->where('status','1')->where('user_id',$user)->first();           
+                $basket->delete();
+            }
+
+            return back()->with('err','پرداخت شما ناموفق بود!');
+        }
     }
 }

@@ -1371,13 +1371,13 @@ h5,
 }
 
 .table {
-    min-width: 1000px !important;
+    min-width: 750px !important;
     width: 100%;
     text-align: center;
 }
 
 .table th {
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .table .thead-primary {
@@ -1385,7 +1385,7 @@ h5,
 }
 
 .table .thead-primary tr th {
-    padding: 20px 10px;
+    padding: 10px 5px;
     color: #fff !important;
     border: 1px solid transparent !important;
 }
@@ -1393,14 +1393,14 @@ h5,
 .table tbody tr td {
     text-align: center !important;
     vertical-align: middle;
-    padding: 40px 10px;
+    padding: 20px 5px;
     border: 1px solid transparent !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 .table tbody tr td.product-remove a {
     bordeR: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 4px 10px;
+    padding: 2px px;
     color: #000000;
 }
 

@@ -14,6 +14,9 @@
 
 
 //=====================Start Frontend Controllers==================
+
+// use Illuminate\Routing\Route;
+
 Route::get('/', 'IndexController@index');
 Auth::routes();
 
@@ -39,6 +42,11 @@ Route::group([], function(){
     Route::resource('/support', 'SupportController')->middleware('auth');
     Route::get('/download/{id}', 'DownloadController@download');
 });
+
+//--------------------------- checkout route -------------------
+Route::get('factorfaild', 'FactorController@showFaild')->name('factorfaild');
+Route::get('do/payment/{id}', 'FactorController@do_payment_zarinpal_faild')->name('do.payment.faild');
+Route::get('payment/callback/{id}','FactorController@Zarinpal_callback')->name('payment.zarinpal.callback');
 
 
 
