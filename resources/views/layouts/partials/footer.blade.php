@@ -11,7 +11,7 @@
         <div class="row mb-5">
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">غذاهای گیاهی</h2>
+                    <h2 class="ftco-heading-2"> </h2>
                     <p>یکی از بهترین راهها انتخاب درست مسیر زندگی هست با ما بسلامتی خود اهمیت بدین</p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -46,7 +46,7 @@
             </div>
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">وب روبیک</h2>
+                    <h2 class="ftco-heading-2"> </h2>
                     <div class="block-23 mb-3">
                         <ul>
                             <li><span class="icon icon-map-marker"></span><span class="text">ایران - شیراز - بلوار جمهوری</span>
@@ -62,14 +62,14 @@
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <p class="copyright">
+                {{-- <p class="copyright">
                     <!-- Link back to webrubik can't be removed.  -->
                     Copyright &copy;<script>document.write(new Date().getFullYear());</script>
                     All rights reserved | This template is made by <a href="https://colorlib.com/" target="_blank">colorlib</a></br>
                     فارسی و راست چین شده &copy توسط حمید معلمی <i class="icon-heart text-danger" aria-hidden="true"></i>
                     از اعضای تیم <a href="https://webrubik.com/" target="_blank"> وب روبیک</a>
                     <!-- Link back to webrubik can't be removed.  -->
-                </p>
+                </p> --}}
             </div>
         </div>
     </div>

@@ -262,17 +262,30 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{auth()->user()->image}}" class="user-image" alt="User Image">
+              @if(auth()->user()->image)
+              <img src="/{{auth()->user()->image}}" class="user-image" alt="User Image">
+              @else
+              <img src="{{ asset('avatar/3.png') }}" class="user-image" alt="User Image">
+              @endif
               <span class="hidden-xs">{{auth()->user()->name}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{auth()->user()->image}}" class="img-circle" alt="User Image">
+                @if(auth()->user()->image)
+                <img src="/{{auth()->user()->image}}" class="img-circle" alt="User Image">
+                @else
+                <img src="{{ asset('avatar/3.png') }}" class="img-circle" alt="User Image">
+                @endif
 
                 <p>
                   {{auth()->user()->name}}
-                  <small>مدیریت کل سایت</small>
+                  <small>
+                    <?php $roles = auth()->user()->role()->get(); ?>
+                    @foreach ( $roles as $item )
+                      {{ $item->fa_name }},                     
+                    @endforeach
+                  </small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -326,8 +339,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        صفحه مدیریت
-        <small>آماده برای پروژه شما</small>
+        
+        <small>صفحه مدیریت</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> خانه</a></li>
@@ -342,9 +355,9 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <footer class="main-footer text-left">
+  {{-- <footer class="main-footer text-left">
     <strong>Copyleft &copy; 2014-2017 <a href="https://adminlte.io">Almsaeed Studio</a> & <a href="http://hosseinizadeh.ir/adminlte">Alireza Hosseinizadeh</a></strong>
-  </footer>
+  </footer> --}}
 
   <!-- Control Sidebar -->
   @include('layouts.controlsidebar')
@@ -354,7 +367,7 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
+@yield('script-footer')
 <!-- jQuery 3 -->
 <script src="/admin/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->

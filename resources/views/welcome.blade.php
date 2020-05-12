@@ -65,7 +65,7 @@
       <!-- <div class="row"> -->
       <div class="row">
         <div class="col-md-12 col-lg-4 order-md-last align-items-stretch d-flex">
-            <div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url(pics/fav2.jpg);background-size:cover;">
+            <div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url(avatar/gif/2.gif);background-size:400px 700px;">
                 <div class="text text-center">
                     <h2>محبوب‌ترین محصولات</h2>
                     <p>بقیه این محصولات رو خیلی دوس داشتن</p>

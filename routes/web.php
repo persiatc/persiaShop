@@ -68,6 +68,9 @@ Route::group(['namespace'=>'admin','middleware'=>['auth','UserLevel'],'prefix'=>
     Route::resource('/post', 'PostController');
     Route::resource('/contact', 'ContactController');
     Route::resource('/support', 'SupportController');
+
+
+
     
 });
 Route::group(['middleware'=>['auth']],function(){
@@ -82,3 +85,4 @@ Route::group(['middleware'=>['auth']],function(){
 
 
 //==================Ajax Routes End==========================
+

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Payment extends Model
 {
   protected $fillable = [
-      'factor_id', 'trackingcode', 'status',
+      'factor_id', 'authority', 'status',
   ];
 
   public function factor(){

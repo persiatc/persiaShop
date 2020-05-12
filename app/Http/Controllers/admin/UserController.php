@@ -129,7 +129,7 @@ class UserController extends AdminController
       $user['email'] = \Auth::user()->email;
       $user['name'] = $data['name'];
       $user['gender_id'] = $data['gender_id'];
-      $data['image'] = $image;
+      $user['image'] = $image;
 
       $user->save();
 //      dd($user);

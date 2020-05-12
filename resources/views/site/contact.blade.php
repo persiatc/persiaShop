@@ -6,8 +6,8 @@
     <div class="container">
       <div class="row no-gutters slider-text align-items-center justify-content-center">
         <div class="col-md-9 ftco-animate text-center">
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">خانه</a></span> </p>
-          <h1 class="mb-0 bread">ارتباط با ما</h1>
+            <p class="breadcrumbs" ><span class="mr-2"><a href="{{ url('/') }}" style="color: #445ee9;">خانه</a></span> </p>
+          <h1 class="mb-0 bread" style="color: #445ee9">تماس با ما</h1>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
         </div>
         <div class="col-md-3 d-flex">
             <div class="info bg-white p-4">
-              <p><span>تلفن:</span> <a href="tel://1234567920">07132309534</a></p>
+              <p><span>تلفن:</span><br> <a href="tel://1234567920">07132309534</a></p>
             </div>
         </div>
         <div class="col-md-3 d-flex">
@@ -53,7 +53,7 @@
         </div>
         <div class="col-md-3 d-flex">
             <div class="info bg-white p-4">
-              <p><span>وب سایت</span> <a href="#">webrubik.com</a></p>
+              <p><span>وب سایت</span><br> <a href="#">webrubik.com</a></p>
             </div>
         </div>
       </div>

@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="ml-2"><a href="index.html">خانه</a></span></p>
+                    <p class="breadcrumbs"><span class="ml-2"><a href="index.html" style="color: #fd4f5b;">خانه</a></span></p>
                     <h1 class="mb-0 bread" style="color: #fd4f5b;">پروفایل کاربری</h1>
                 </div>
             </div>

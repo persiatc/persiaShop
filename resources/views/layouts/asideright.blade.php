@@ -4,10 +4,14 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
       <div class="pull-right image">
-        <img src="{{auth()->user()->image}}" class="img-circle" alt="User Image">
+        @if(auth()->user()->image)
+        <img src="/{{auth()->user()->image}}" class="img-circle" alt="User Image">
+        @else
+        <img src="{{ asset('avatar/3.png') }}" class="img-circle" alt="User Image">
+        @endif
       </div>
       <div class="pull-right info">
-        <p>{{auth()->user()->name}}</p>>
+        <p>{{auth()->user()->name}}</p>
         <a href="#"><i class="fa fa-circle text-success"></i> آنلاین</a>
       </div>
     </div>

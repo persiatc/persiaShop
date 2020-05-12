@@ -5,8 +5,8 @@
   <div class="container">
     <div class="row no-gutters slider-text align-items-center justify-content-center">
       <div class="col-md-9 ftco-animate text-center">
-        <p class="breadcrumbs"><span class="mr-2"><a href="">خانه</a></span> </p>
-        <h1 class="mb-0 bread">محصولات</h1>
+        <p class="breadcrumbs"><span class="mr-2"><a href="{{ url('/') }}" style="color: #a94500">خانه</a></span> </p>
+        <h1 class="mb-0 bread" style="color: #a94500">محصولات</h1>
       </div>
     </div>
   </div>
