@@ -96,7 +96,7 @@ class UserController extends AdminController
     {
         //
     }
-    
+
     public function userPanel(){
       return view('admin.userpanel.index');
     }
@@ -111,21 +111,21 @@ class UserController extends AdminController
   public function userUpdate(Request $request, User $user)
   {
 //      dd($request->all());
-      
+
         $data = $request -> validate( [
           'name' => ['required', 'string', 'max:255'],
           'gender_id' => ['nullable']
       ]);
-      
+
       $user = \Auth::user();
-      
+
       if($request['image']){
         $file = $request['image'];
         $image = $this->ImageUploader($file,'profile/');
       }else{
         $image = $user->image;
       }
-      
+
       $user['email'] = \Auth::user()->email;
       $user['name'] = $data['name'];
       $user['gender_id'] = $data['gender_id'];
@@ -134,7 +134,7 @@ class UserController extends AdminController
       $user->save();
 //      dd($user);
       return redirect(route('userpanel'));
-      
+
   }
 
 

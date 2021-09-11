@@ -21,7 +21,7 @@ class IndexController extends Controller
         $allcategories = Category::get();
         $favorites = Product::orderBy('download_number', 'desc')->paginate(4);
         $bestsellers = Product::orderBy('sales_number', 'desc')->paginate(8);
-        return view('welcome', compact('sliders', 'favorites', 'bestsellers', 'allcategories'));
+        return view('persiatc.pages.index', compact('sliders', 'favorites', 'bestsellers', 'allcategories'));
       }else{
         $product=Product::orderBy('id','DESC');
         $products = Product::search($request->all(), $product);

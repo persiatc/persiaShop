@@ -9,21 +9,21 @@
 			<form action="{{ route('register') }}" method="POST">
             @csrf
 				<h1>ایجاد حساب</h1>
-				<div class="social-container">
+				{{-- <div class="social-container">
 					<a href="#" class="social"><i class="fa fa-facebook-f"></i></a>
 					<a href="#" class="social"><i class="fa fa-google-plus"></i></a>
 					<a href="#" class="social"><i class="fa fa-linkedin"></i></a>
-				</div>
-				<span>یا با ایمیل خود حساب ایجاد کنید</span>
-                <input placeholder="نام" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+				</div> --}}
+				<span>یا با شماره موبایل خود حساب ایجاد کنید</span>
+                <input placeholder="نام" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="off" autofocus>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                <input placeholder="ایمیل" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                <input placeholder="شماره موبایل" id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="off">
 
-                                @error('email')
+                                @error('mobile')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -35,7 +35,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                <input placeholder="تکرار رمز عبور" id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                <input placeholder="تکرار رمز عبور" id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="off">
 				<button type="submit">عضویت</button>
 			</form>
 		</div>
@@ -45,27 +45,27 @@
 			<form action="{{ route('login') }}" method="POST">
             @csrf
 				<h1>ورود</h1>
-				<div class="social-container">
+				{{-- <div class="social-container">
 					<a href="#" class="social"><i class="fa fa-facebook-f"></i></a>
 					<a href="#" class="social"><i class="fa fa-google-plus"></i></a>
 					<a href="#" class="social"><i class="fa fa-linkedin"></i></a>
-				</div>
+				</div> --}}
 				<span>یا با حساب خود وارد شوید</span>
-                <input placeholder="ایمیل" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <input placeholder="شماره موبایل" id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="off" autofocus>
 
-                                @error('email')
+                                @error('mobile')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                <input placeholder="رمز عبور" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                <input placeholder="رمز عبور" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="off">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-				<a href="#">رمز عبور خود را فراموش کرده ام !</a>
+				{{-- <a href="#">رمز عبور خود را فراموش کرده ام !</a> --}}
 				<button type="submit">ورود</button>
 			</form>
 		</div>

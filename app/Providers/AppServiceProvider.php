@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Basket;
 use App\Category;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,7 +26,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-      view()->composer('layouts.partials.header', function($view){
+        $auth = auth()->user();
+        if($auth != null){
+            $baskets=Basket::where('user_id', auth()->user()->id)->where('status', '0')->get();
+        }else{
+            $baskets= array();
+        }
+        $cats = Category::where('chid', '!=', 0)->get();
+        $categories = Category::where('chid', 0)->get();
+        view()->share([
+            'categories'=>$categories,
+            'cats'=>$cats,
+            'baskets'=>$baskets,
+        ]);
+
+      view()->composer('persiatc.partials.header', function($view){
         $categories = Category::where('chid', 0)->get();
         $cats = Category::where('chid', '!=', 0)->get();
         $auth = auth()->user();
@@ -46,5 +61,7 @@ class AppServiceProvider extends ServiceProvider
           ]);
         }
       });
+
+
     }
 }

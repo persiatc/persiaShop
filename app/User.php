@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'gender_id', 'lastlogin',
+        'name', 'email', 'password', 'gender_id', 'lastlogin', 'mobile'
     ];
 
     public function gender(){
@@ -46,11 +46,11 @@ class User extends Authenticatable
     public function article(){
         return $this->hasMany(Article::class);
     }
-    
+
     public function favorite(){
       return $this->hasMany(Favorite::class);
     }
-    
+
     public function post(){
         return $this->hasMany(Post::class);
     }
@@ -75,8 +75,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
-    
+
+
     public function hasRole($roles){
 //        dd($roles);
         if(is_string($roles)){
@@ -86,8 +86,8 @@ class User extends Authenticatable
                 if($this->hasRole($role->en_name)){
                     return true;
                 }
-            }   
+            }
         }
-        
+
     }
 }

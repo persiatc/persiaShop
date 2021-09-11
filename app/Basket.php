@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 class Basket extends Model
 {
-  use SoftDeletes;
+//   use SoftDeletes;
   protected $fillable = [
       'user_id', 'product_id', 'price', 'status',
   ];
-  protected $dates = ['deleted_at'];
+//   protected $dates = ['deleted_at'];
   public function user(){
     return $this->belongsTo(User::class);
   }

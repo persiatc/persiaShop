@@ -29,4 +29,12 @@ class Category extends Model
     $category = $category->paginate(10);
     return $category;
   }
+
+  public function children(){
+      return $this->hasMany(self::class, 'chid', 'id');
+  }
+
+  public function parent(){
+      return $this->hasOne(self::class, 'id', 'chid');
+  }
 }

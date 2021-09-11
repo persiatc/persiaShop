@@ -78,8 +78,8 @@
                             خانه
                         </a>
                     </li>
-                
-                
+
+
                      <li class="nav-item">
 
                         <a class="nav-link" href="{{ route('logout') }}"
@@ -107,8 +107,8 @@
                 <?php endif; ?>
 
 
-              
-          
+
+
                 <li class="nav-item cta cta-colored float-left">
                   <form class="form-inline nav-link">
                     {{csrf_field()}}
