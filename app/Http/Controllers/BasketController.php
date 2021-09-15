@@ -20,7 +20,7 @@ class BasketController extends Controller
       $baskets=Basket::where('user_id', auth()->user()->id)->where('status', '0')->get();
       // $baskets=Basket::where('user_id', auth()->user()->id)->get();
 
-      return view('site.basket', compact('baskets'));
+      return view('persiatc.pages.basket', compact('baskets'));
     }
 
     /**

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 class Factor extends Model
 {
-    use SoftDeletes;
+    // use SoftDeletes;
     protected $fillable = [
         'user_id', 'sum', 'status',
     ];

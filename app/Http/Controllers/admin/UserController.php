@@ -98,13 +98,15 @@ class UserController extends AdminController
     }
 
     public function userPanel(){
-      return view('admin.userpanel.index');
+        return view('persiatc.pages.profile.info');
+
+    //   return view('admin.userpanel.index');
     }
 
     public function userEdit(User $user)
     {
         $genders = Gender::all();
-      return view('admin.userpanel.edit', ['user' => $user, 'genders'=>$genders]);
+      return view('persiatc.pages.profile.edit-info', ['user' => $user, 'genders'=>$genders]);
     }
 
 
@@ -114,7 +116,8 @@ class UserController extends AdminController
 
         $data = $request -> validate( [
           'name' => ['required', 'string', 'max:255'],
-          'gender_id' => ['nullable']
+          'gender_id' => ['required'],
+          'email' => ['required']
       ]);
 
       $user = \Auth::user();
@@ -126,7 +129,7 @@ class UserController extends AdminController
         $image = $user->image;
       }
 
-      $user['email'] = \Auth::user()->email;
+      $user['email'] = $data['email'];
       $user['name'] = $data['name'];
       $user['gender_id'] = $data['gender_id'];
       $user['image'] = $image;

@@ -75,7 +75,7 @@ class ProductController extends Controller
           }
         }
       }
-       return view('site.product',compact('pro','mortabet', 'comments', 'rating'));
+       return view('persiatc.pages.product',compact('pro','mortabet', 'comments', 'rating'));
     }
 
     /**

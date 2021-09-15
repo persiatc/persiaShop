@@ -48,10 +48,10 @@ class CategoryController extends Controller
     public function show(Category $cat, Request $request)
     {
       // dd($request->all());
-      
+
         $c = Category::where('chid',$cat->id)->get();
-        
-        
+
+
       if(empty($request->all())){
         if($cat->chid == 0){
             $c = Category::where('chid',$cat->id)->get();
@@ -61,7 +61,7 @@ class CategoryController extends Controller
         }else{
           $pros = Product::where('category_id', $cat->id)->paginate(10);
         }
-        return view('site.category' ,compact('pros','cat', 'c'));
+        return view('persiatc.pages.category' ,compact('pros','cat', 'c'));
       }else{
         if($cat->chid == 0){
             $c = Category::where('chid',$cat->id)->pluck('id');
@@ -69,7 +69,7 @@ class CategoryController extends Controller
         }else{
           $pros = Product::where('category_id', $cat->id);
         }
-          
+
         $products = Product::search($request->all(), $pros);
         return view('site.search', compact('products'));
       }

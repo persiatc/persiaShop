@@ -3,7 +3,7 @@
     <section class="top-head container">
         <div class="right-head">
             <div class="logo">
-                <a href="{{ url('/') }}"><img style="height: 50px;" src="persiatc/assets/images/logo/Logo.jpg"></a>
+                <a href="{{ url('/') }}"><img style="height: 50px;" src="/persiatc/assets/images/logo/Logo.jpg"></a>
             </div>
             <form action="">
                 {{csrf_field()}}
@@ -19,14 +19,14 @@
                         <a href="{{route('login')}}"> ورود به حساب کاربری </a>
                     @endguest
                     @auth
-                        <div class="user-modal">
-                            <a class="profile" href="{{route('userpanel')}}"><i class="fa fa-user"></i> پروفایل</a>
-                            <a class="order" href="#"><i class="fa fa-folder"></i> پیگیری سفارش</a>
+                        <div class="user-modal" style="right:-64px !important;">
+                            <a class="profile" style="margin-right:0px !important;" href="{{route('userpanel')}}"><i class="fa fa-user"></i> پروفایل</a>
+                            <a class="order" href="#" style="margin-right:0px !important;" ><i class="fa fa-folder"></i> پیگیری سفارش</a>
                             <a class="nav-link" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
-                                          document.getElementById('logout-form').submit();">
+                                          document.getElementById('logout-form').submit();"><i class="fa  fa-sign-out"></i>
                              خروج
-                         </a>
+                            </a>
 
                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                              @csrf

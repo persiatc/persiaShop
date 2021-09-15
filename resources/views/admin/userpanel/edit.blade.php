@@ -1,5 +1,5 @@
 @extends('layouts.usersidebar')
-                
+
 @section('content')
 <div class="sidebar-box ftco-animate col-9">
 <!-- ............................................. -->
@@ -18,8 +18,8 @@
                 <input name="name" type="text" class="form-control" value="{{auth::user()->name}}">
               </div>
             </div>
-                    
-            
+
+
             <div class="col-md-12 ftco-animate titr">
             <h5 class="tit"> جنسیت</h5>
                 @if(isset(auth::user()->gender_id))
@@ -40,7 +40,7 @@
                     @endforeach
                 @endif
             </div>
-            
+
             <div class="col-md-12 ftco-animate titr">
                 <h5 class="tit"> تصویر</h5>
             <div class="form-group">
@@ -49,8 +49,8 @@
 
             <input class="form-control" name="image" type="file" id="exampleInputFile">
           </div>
-                    
-                    
+
+
             <div class="col-md-12 ftco-animate">
             <button class="btn btn-primary btn" type="submit" style="margin:2vh;">ذخیره تغییرات</button>
             </div>

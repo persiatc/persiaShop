@@ -42,16 +42,16 @@
           <p class="text-left mr-4">
             <a href="#" class="mr-2">امتیاز {{round($rating, 2)}} از ۵  </a>
           </p>
-            
-           
+
+
             <p class="text-left mr-4">
                 <a href="#" class="mr-2" style="color: #000;">{{count($pro->ratings)}}<span style="color: #bbb;">رای</span></a>
             </p>
-          
+
           <p class="text-left">
             <a href="#" class="mr-2" style="color: #000;">{{"   ".$pro->sales_number}} <span style="color: #bbb;">فروخته شده</span></a>
           </p>
-            
+
         </div>
         <?php if ($pro->discount != 0): ?>
         <div class="text py-3 pb-4 px-3 text-center">
@@ -103,7 +103,7 @@
           @else
             <p><a class="text-danger mb-5" data-id="{{$pro->id}}">برای خرید این محصول ابتدا وارد شوید</a><br></p>
           @endif
-          
+
       </div>
 
 
@@ -214,7 +214,7 @@
                 <a href="#" class=" d-flex justify-content-center align-items-center text-center">
                   <span><i class="ion-ios-menu"></i></span>
                 </a>
-                <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1 add-to-cart" 
+                <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1 add-to-cart"
                    data-id="{{$item->id}}">
                   <span><i class="ion-ios-cart"></i></span>
                 </a>
@@ -233,3 +233,7 @@
 </section>
 
 @endsection
+
+
+
+

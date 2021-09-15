@@ -29,6 +29,8 @@
 
     $('.add-to-cart').on('click', function() {
         var id = $(this).attr('data-id');
+        console.log(id);
+
         $.ajax({
             url: '/basket',
             type: 'post',

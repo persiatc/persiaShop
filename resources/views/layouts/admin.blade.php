@@ -283,7 +283,7 @@
                   <small>
                     <?php $roles = auth()->user()->role()->get(); ?>
                     @foreach ( $roles as $item )
-                      {{ $item->fa_name }},                     
+                      {{ $item->fa_name }},
                     @endforeach
                   </small>
                 </p>
@@ -339,7 +339,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        
+
         <small>صفحه مدیریت</small>
       </h1>
       <ol class="breadcrumb">
