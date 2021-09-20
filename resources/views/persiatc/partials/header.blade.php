@@ -70,7 +70,7 @@
                 </ul>
             </li>
 
-            <li><a href="{{route('postt.index')}}">وبلاگ</a></li>
+            <li><a href="#">وبلاگ</a></li>
             <li><a href="{{ Route('contactt.index') }}">تماس با ما</a></li>
             {{-- <li><a href="#">دیجی شاپ من</a></li>
             <li><a href="#">دیجی کلاب</a></li> --}}

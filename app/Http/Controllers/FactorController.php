@@ -30,9 +30,7 @@ class FactorController extends Controller
     public function create(Request $request)
     {
         $baskets=Basket::where('user_id', auth()->user()->id)->where('status','=','0')->get();
-        return view('site.checkout', compact('baskets'));
-        
-        
+        return view('persiatc.pages.checkout', compact('baskets'));
     }
 
     /**
@@ -43,7 +41,7 @@ class FactorController extends Controller
      */
     public function store(Request $request)
     {
-       
+
 
         if($request->payment_method == "zarinpal") {
 
@@ -65,11 +63,11 @@ class FactorController extends Controller
             }
             $factor->update(['sum'=>$sum]);
             $factors = Factor::where('id', $factor->id)->get();
-            
+
             $this->do_payment_zarinpal($factor);
         }
         else{
-            
+
             return back()->with('err','لطفا روش پرداخت رو تایید کنید !');
         }
     }
@@ -157,7 +155,7 @@ class FactorController extends Controller
             file_put_contents('Authority', $results['Authority']);
             $zarinpal->redirect();
         }
-       
+
     }
     public function do_payment_zarinpal_faild($id){
 
@@ -211,7 +209,7 @@ class FactorController extends Controller
             session('success','خرید شما انجام شد');
             return view('site.factor', compact('factors'));
 
-            
+
 
         }
         elseif($status == "NOK") {
@@ -230,7 +228,7 @@ class FactorController extends Controller
             $products = $factor->product()->get();
             $user = auth()->user()->id;
             foreach($products as $item) {
-                $basket = Basket::where('product_id',$item->id)->where('status','1')->where('user_id',$user)->first();           
+                $basket = Basket::where('product_id',$item->id)->where('status','1')->where('user_id',$user)->first();
                 $basket->delete();
             }
 
