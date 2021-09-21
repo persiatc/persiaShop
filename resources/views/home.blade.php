@@ -93,7 +93,7 @@
               <tr>
                 <th>شماره</th>
                 <th>محصول</th>
-                <th>تعداد دانلود</th>
+                <th> بازدید</th>
                 <th>تعداد فروش</th>
                 <th>تخفیف</th>
               </tr>
@@ -189,7 +189,7 @@
         <!-- /.info-box-content -->
       </div>
       <!-- /.info-box -->
-      <div class="info-box bg-red">
+      {{-- <div class="info-box bg-red">
         <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
 
         <div class="info-box-content">
@@ -202,7 +202,7 @@
 
         </div>
         <!-- /.info-box-content -->
-      </div>
+      </div> --}}
       <!-- /.info-box -->
       <div class="info-box bg-aqua">
         <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
