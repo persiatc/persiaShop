@@ -3,8 +3,8 @@
     <link type="text/css" href="login-register/css/style.css" rel="stylesheet" />
 
 <body>
-    @if($errors->any())
-<div class="c-message-light c-message-light--info" style="background-color: #ca4949;color:white">
+    {{-- @if($errors->any())
+    <div class="c-message-light c-message-light--info" style="background-color: #ca4949;color:white">
     @foreach ($errors->all() as $error)
     <div class="c-message-light__justify">
         <p class="c-message-light--text">
@@ -12,8 +12,8 @@
         </p>
     </div>
     @endforeach
-</div>
-@endif
+    </div>
+    @endif --}}
 	<div class="container" id="container">
 		<!-- start sing up form -->
 		<div class="form-container sign-up-container">
