@@ -64,7 +64,7 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
+          {{-- <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
               <span class="label label-success">4</span>
@@ -139,9 +139,9 @@
               </li>
               <li class="footer"><a href="#">نمایش تمام پیام ها</a></li>
             </ul>
-          </li>
+          </li> --}}
           <!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu">
+          {{-- <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
               <span class="label label-warning">۱۰</span>
@@ -180,9 +180,9 @@
               </li>
               <li class="footer"><a href="#">نمایش همه</a></li>
             </ul>
-          </li>
+          </li> --}}
           <!-- Tasks: style can be found in dropdown.less -->
-          <li class="dropdown tasks-menu">
+          {{-- <li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
               <span class="label label-danger">۹</span>
@@ -258,7 +258,7 @@
                 <a href="#">نمایش همه</a>
               </li>
             </ul>
-          </li>
+          </li> --}}
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -292,13 +292,13 @@
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
-                    <a href="#">صفحه من</a>
+                    <a href="/">سایت</a>
                   </div>
                   <div class="col-xs-4 text-center">
-                    <a href="#">فروش</a>
+                    {{-- <a href="#">فروش</a> --}}
                   </div>
                   <div class="col-xs-4 text-center">
-                    <a href="#">دوستان</a>
+                    <a href="{{ route('home') }}">کنترل پنل</a>
                   </div>
                 </div>
                 <!-- /.row -->

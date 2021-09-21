@@ -73,14 +73,14 @@
             @can('product_create')
                 <li><a href="{{route('product.create')}}"><i class="fa fa-circle-o"></i>افزودن محصول جدید</a></li>
             @endcan
-            
+
             <li><a href="{{route('category.index')}}"><i class="fa fa-circle-o"></i>لیست دسته‌بندی‌ها</a></li>
             <li><a href="{{route('category.create')}}"><i class="fa fa-circle-o"></i>افزودن دسته‌بندی جدید</a></li>
             <li><a href="{{route('producer.index')}}"><i class="fa fa-circle-o"></i>لیست تولیدکننده‌ها</a></li>
             <li><a href="{{route('producer.create')}}"><i class="fa fa-circle-o"></i>افزودن تولیدکننده جدید</a></li>
         </ul>
       </li>
-    
+
     <li class="treeview">
         <a href="#">
           <i class="fa fa-dashboard"></i> <span>مدیریت تگ‌ها</span>
@@ -93,7 +93,7 @@
             <li><a href="{{route('tag.create')}}"><i class="fa fa-circle-o"></i>افزودن تگ جدید</a></li>
         </ul>
       </li>
-    
+
     <li class="treeview">
         <a href="#">
           <i class="fa fa-dashboard"></i> <span>مدیریت نظرات</span>
@@ -108,7 +108,7 @@
             <li><a href="{{route('contact.index')}}"><i class="fa fa-circle-o"></i>مشاهده پیام‌های ارتباط با ما</a></li>
             <li><a href="{{route('support.index')}}"><i class="fa fa-circle-o"></i>مشاهده پیام‌های پشتیبانی</a></li>
         </ul>
-        
+
       </li>
     <li class="treeview">
         <a href="#">
@@ -125,11 +125,11 @@
                 <li><a href="{{route('post.create')}}"><i class="fa fa-circle-o"></i>افزودن پست جدید</a></li>
             @endcan
         </ul>
-        
+
       </li>
-    
-    
-      <li class="treeview">
+
+
+      {{-- <li class="treeview">
         <a href="#">
           <i class="fa fa-dashboard"></i> <span>مدیریت فیلتر</span>
           <span class="pull-left-container">
@@ -154,7 +154,7 @@
             <li><a href="{{route('sliderparent.index')}}"><i class="fa fa-circle-o"></i>لیست والدهای اسلایدرها</a></li>
             <li><a href="{{route('sliderparent.create')}}"><i class="fa fa-circle-o"></i>افزودن والد اسلایدر جدید</a></li>
         </ul>
-      </li>
+      </li> --}}
 
 
 

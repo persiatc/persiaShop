@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 @section('content')
-  
+
 
 <section class="content">
   <!-- Info boxes -->
   <div class="row">
-    
-   
+
+
 
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
@@ -73,7 +73,7 @@
   <div class="row">
     <!-- Left col -->
     <div class="col-md-8">
-     
+
        <!-- TABLE: LATEST ORDERS -->
        <div class="box box-info">
         <div class="box-header with-border">
@@ -105,9 +105,9 @@
                     <td>{{$item->name}}</td>
                     <td><span class="label label-info">{{$item->sales_number}}</span></td>
                     <td><span class="label label-success">{{$item->download_number}}</span></td>
-                    <td><span class="label label-danger">{{$item->discount}}%</span></td>                 
+                    <td><span class="label label-danger">{{$item->discount}}%</span></td>
                   </tr>
-                @endforeach    
+                @endforeach
               </tbody>
             </table>
           </div>
@@ -143,15 +143,15 @@
               <ul class="users-list clearfix">
                 @foreach ($all_user as $item)
                 <li>
-                  @if($item->image)
+                  {{-- @if($item->image)
                   <img src="/{{$item->image}}" alt="User Image">
                   @else
                   <img src="/avatar/4.jpeg" alt="User Image">
-                  @endif
+                  @endif --}}
                   <a class="users-list-name" href="#">{{$item->name}}</a>
                   <span class="users-list-date">{{ Verta::instance($item->created_at)->format('%B %d، %Y') }}</span>
                 </li>
-                @endforeach        
+                @endforeach
               </ul>
               <!-- /.users-list -->
             </div>
@@ -163,16 +163,16 @@
           </div>
           <!--/.box -->
         </div>
-        <!-- /.col -->       
+        <!-- /.col -->
       </div>
       <!-- /.row -->
 
-     
+
     </div>
     <!-- /.col -->
 
     <div class="col-md-4">
-      
+
       <!-- /.info-box -->
       <div class="info-box bg-green">
         <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
@@ -184,7 +184,7 @@
           <div class="progress">
             <div class="progress-bar" style="width: 100%"></div>
           </div>
-        
+
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -199,7 +199,7 @@
           <div class="progress">
             <div class="progress-bar" style="width: 100%"></div>
           </div>
-         
+
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -214,13 +214,13 @@
           <div class="progress">
             <div class="progress-bar" style="width: 100%"></div>
           </div>
-          
+
         </div>
         <!-- /.info-box-content -->
       </div>
       <!-- /.info-box -->
 
-     
+
 
       <!-- PRODUCT LIST -->
       <div class="box box-primary">
@@ -244,11 +244,11 @@
               <div class="product-info">
                 <a href="javascript:void(0)" class="product-title">{{$item->name}}
                   <span class="label label-info pull-left">{{number_format($item->price)}}</span></a>
-                
+
               </div>
             </li>
             <!-- /.item -->
-            @endforeach     
+            @endforeach
           </ul>
         </div>
         <!-- /.box-body -->
