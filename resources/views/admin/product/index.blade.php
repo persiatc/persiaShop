@@ -9,14 +9,14 @@
     <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
       <div class="row">
         <div class="col-sm-6">
-          
+
          <form class="form-inline nav-link">
             {{csrf_field()}}
              <div class="form-group">
                 <label for="exampleInputPassword1">مرتب‌سازی بر اساس</label>
                  <select class="form-control" name="item">
                      <option value="sales_number">تعداد فروش</option>
-                     <option value="download_number">تعداد دانلود</option>
+                     <option value="download_number">تعداد بازدید</option>
                      <option value="created_at">زمان اضافه شدن</option>
                  </select>
               </div>
