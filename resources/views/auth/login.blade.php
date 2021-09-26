@@ -1,107 +1,73 @@
 
-<link rel="stylesheet" href="login-register/css/font-awesome.min.css">
-    <link type="text/css" href="login-register/css/style.css" rel="stylesheet" />
 
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ثبت نام</title>
+    <link rel="stylesheet" href="/persiatc/assets/vendor/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="/persiatc/assets/css/main.css">
+    <link rel="stylesheet" href="/persiatc/assets/css/mediaq.css">
+</head>
 <body>
-    {{-- @if($errors->any())
-    <div class="c-message-light c-message-light--info" style="background-color: #ca4949;color:white">
-    @foreach ($errors->all() as $error)
-    <div class="c-message-light__justify">
-        <p class="c-message-light--text">
-        <div>{{ $error }}</div>
-        </p>
-    </div>
-    @endforeach
-    </div>
-    @endif --}}
-	<div class="container" id="container">
-		<!-- start sing up form -->
-		<div class="form-container sign-up-container">
-			<form action="{{ route('register') }}" method="POST">
-            @csrf
-				<h1>ایجاد حساب</h1>
-				{{-- <div class="social-container">
-					<a href="#" class="social"><i class="fa fa-facebook-f"></i></a>
-					<a href="#" class="social"><i class="fa fa-google-plus"></i></a>
-					<a href="#" class="social"><i class="fa fa-linkedin"></i></a>
-				</div> --}}
-				<span>یا با شماره موبایل خود حساب ایجاد کنید</span>
-                <input placeholder="نام" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="off" autofocus>
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                <input placeholder="شماره موبایل" id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="off">
 
-                                @error('mobile')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                <input placeholder="رمز عبور" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+    <section class="account-box">
+        @if($errors->any())
+            <div class="c-message-light c-message-light--info" style="background-color: #ca4949;color:white">
+                @foreach ($errors->all() as $error)
+                <div class="c-message-light__justify">
+                    <p class="c-message-light--text">
+                    <div>{{ $error }}</div>
+                    </p>
+                </div>
+                @endforeach
+            </div>
+        @endif
+        <div class="register-logo">
+            <a href="/"><img style="height: 130px;width: 180px;" src="/persiatc/Logo.bmp" alt=""></a>
+        </div>
+        <div class="register login">
+            <div class="headline">ورود به ارتباطات پرشیا</div>
+            <div class="content">
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf
+                    <label for="mobtel">شماره موبایل</label>
+                    <input name="mobile" value="{{ old('mobile') }}" required autocomplete="off"  id="mobtel" class="@error('mobile') is-invalid @enderror" type="text" placeholder="شماره موبایل خود را وارد نمایید">
+                    <label for="pwd">کلمه عبور</label>
+                    <input name="password" value="{{ old('password') }}" required autocomplete="off"  id="pwd" type="text" class="@error('password') is-invalid @enderror"placeholder="کلمه عبور خود را وارد نمایید">
+                    <div class="acc-agree">
+                        <input id="chkbox" type="checkbox" checked>
+                        <label for="chkbox"><span>مرا به خاطر داشته باش</span></label>
+                    </div>
+                    <button type="submit"><i class="fa fa-unlock"></i> ورود به ارتباطات پرشیا</button>
+                </form>
+            </div>
+            <div class="foot login-foot">
+                <span>کاربر جدید هستید؟</span>
+                <a href="{{ route('register') }}">ثبت نام در ارتباطات پرشیا</a>
+            </div>
+        </div>
+    </section>
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                <input placeholder="تکرار رمز عبور" id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="off">
-				<button type="submit">عضویت</button>
-			</form>
-		</div>
-		<!-- end sing up form -->
-		<!-- start sing in form -->
-		<div class="form-container sign-in-container">
-			<form action="{{ route('login') }}" method="POST">
-            @csrf
-				<h1>ورود</h1>
-				{{-- <div class="social-container">
-					<a href="#" class="social"><i class="fa fa-facebook-f"></i></a>
-					<a href="#" class="social"><i class="fa fa-google-plus"></i></a>
-					<a href="#" class="social"><i class="fa fa-linkedin"></i></a>
-				</div> --}}
-				<span>یا با حساب خود وارد شوید</span>
-                <input placeholder="شماره موبایل" id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="off" autofocus>
+    <footer>
+        <section class="footer account-footer container">
+            <ul>
+                <li><a href="#">درباره ارتباطات پرشیا</a></li>
+                <li><a href="#">فرصت های شغلی</a></li>
+                <li><a href="#">تماس با ما</a></li>
+                <li><a href="#">همکاری با سازمان ها</a></li>
+            </ul>
+            <div class="copyright"><p>استفاده از مطالب فروشگاه اینترنتی ارتباطات پرشیا فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق به شرکت فلان (فروشگاه آنلاین ارتباطات پرشیا) می‌باشد.</p></div>
 
-                                @error('mobile')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                <input placeholder="رمز عبور" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="off">
+            <div class="copyright-en">
+                <p>Copyright © 2006 - 2018 persiatc.com</p>
+            </div>
+        </section>
+    </footer>
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-				{{-- <a href="#">رمز عبور خود را فراموش کرده ام !</a> --}}
-				<button type="submit">ورود</button>
-			</form>
-		</div>
-		<!-- end sing in form -->
-
-		<div class="overlay-container">
-			<div class="overlay">
-				<!-- start sing in overlay -->
-				<div class="overlay-panel overlay-right">
-					<h1>خوش آمدید</h1>
-					<p>برای برقراری ارتباط با ما لطفا حساب کاربری خود را ایجاد کنید</p>
-					<button class="ghost" id="signIn">ورود</button>
-				</div>
-				<!-- end sing in overlay -->
-				<!-- start sing up overlay -->
-				<div class="overlay-panel overlay-left">
-					<h1>سلام، دوست خوبم</h1>
-					<p>وارد حساب کاربری خود شوید و با ما به کشف جهان بپردازید</p>
-					<button class="ghost" id="signUp">عضویت</button>
-				</div>
-				<!-- end sing up overlay -->
-			</div>
-		</div>
-    </div>
-
-    <script  src="login-register/js/scripts.js"></script>
-
-
+    <script src="/persiatc/assets/js/jquery.min.js"></script>
+    <script src="/persiatc/assets/js/script.js"></script>
+</body>
+</html>

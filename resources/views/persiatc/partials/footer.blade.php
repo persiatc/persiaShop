@@ -1,7 +1,7 @@
 
   <footer>
     <section class="footer container">
-        <div class="icon">
+        {{-- <div class="icon">
             <div class="icon-item">
                 <a href="#"> <img src="persiatc/assets/images/icon/1.svg" alt=""> <span>7 روز ضمانت بازگشت</span> </a>
             </div>
@@ -17,7 +17,7 @@
             <div class="icon-item">
                 <a href="#"> <img src="persiatc/assets/images/icon/5.svg" alt=""> <span>ضمانت اصل بودن کالا</span> </a>
             </div>
-        </div>
+        </div> --}}
         <div class="footer-content">
             <div class="shop-help">
                 <h3 class="head">راهنمای خرید از ارتباطات پرشیا</h3>
@@ -48,7 +48,7 @@
             </div> --}}
             <div class="cert">
                 <h3 class="head">مجوزهای ارتباطات پرشیا</h3>
-                <div class="image"> <img src="persiatc/assets/images/cert/enamad.png" alt=""> <img src="persiatc/assets/images/cert/samandehi.png" alt=""></div>
+                <div class="image"> <img src="/persiatc/assets/images/cert/enamad.png" alt=""> <img src="/persiatc/assets/images/cert/samandehi.png" alt=""></div>
             </div>
         </div>
         <div class="footer-contact">

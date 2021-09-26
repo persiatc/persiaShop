@@ -16,7 +16,7 @@ class FavoriteController extends Controller
     public function index()
     {
         $favorites=Favorite::where('user_id', auth()->user()->id)->get();
-      return view('site.favorite', compact('favorites'));
+      return view('persiatc.pages.profile.favorite', compact('favorites'));
     }
 
     /**
@@ -26,7 +26,7 @@ class FavoriteController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -49,7 +49,7 @@ class FavoriteController extends Controller
               'user_id'=>auth()->user()->id,
               'product_id'=>$product->id,
             ]);
-            
+
             return response()->json(['favorite_create'=>'success']);
           }
           else{

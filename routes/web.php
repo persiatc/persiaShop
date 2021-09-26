@@ -28,8 +28,8 @@ Route::resource('cat', 'CategoryController');
 Route::resource('pro', 'ProductController');
 Route::resource('commen','CommentController');
 Route::resource('contactt','ContactController');
-Route::resource('postt','PostController'); 
-Route::resource('comment-post','CommentpostController');  
+Route::resource('postt','PostController');
+Route::resource('comment-post','CommentpostController');
 
 
 
@@ -39,7 +39,7 @@ Route::group([], function(){
 //  Route::get('/product', 'BasketController@store')->middleware('auth');
     Route::resource('/favorite', 'FavoriteController')->middleware('auth');
     Route::resource('/factor', 'FactorController')->middleware('auth');
-    Route::resource('/support', 'SupportController')->middleware('auth');
+    Route::resource('/supportt', 'SupportController')->middleware('auth');
     Route::get('/download/{id}', 'DownloadController@download');
 });
 
@@ -71,7 +71,7 @@ Route::group(['namespace'=>'admin','middleware'=>['auth','UserLevel'],'prefix'=>
 
 
 
-    
+
 });
 Route::group(['middleware'=>['auth']],function(){
     Route::get('/userpanel', 'admin\UserController@userPanel')->name('userpanel');

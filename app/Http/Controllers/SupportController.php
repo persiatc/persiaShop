@@ -15,7 +15,7 @@ class SupportController extends Controller
      */
     public function index()
     {
-        return view('site.support');
+        return view('persiatc.pages.profile.support');
     }
 
     /**
@@ -36,7 +36,7 @@ class SupportController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request->all());
+    //    dd($request->all());
         $this->validate(request(),[
             'subject'=>'required',
             'content'=>'required',

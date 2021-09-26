@@ -29,13 +29,13 @@
                     <li><a href="userpanel" class="c-profile-menu__url c-profile-menu__url--dashboard">پروفایل</a></li>
                     <li><a href="useredit" class="c-profile-menu__url c-profile-menu__url--personal is-active">ویرایش اطلاعات شخصی</a></li>
                     <li><a href="addresses.html" class="c-profile-menu__url c-profile-menu__url--address">آدرس ها</a></li>
-                    <li><a href="orders.html" class="c-profile-menu__url c-profile-menu__url--orders">همه سفارش ها</a></li>
+                    {{-- <li><a href="orders.html" class="c-profile-menu__url c-profile-menu__url--orders">همه سفارش ها</a></li> --}}
                     {{-- <li><a href="orders-return.html" class="c-profile-menu__url c-profile-menu__url--return ">درخواست مرجوعی</a></li> --}}
-                    <li><a href="favorites.html" class="c-profile-menu__url c-profile-menu__url--wishlist">لیست علاقه مندی ها</a></li>
-                    <li><a href="comments.html" class="c-profile-menu__url c-profile-menu__url--return">سبد خرید</a></li>
-                    <li><a href="giftcards.html" class="c-profile-menu__url c-profile-menu__url--gifts">خریدهای انجام شده</a></li>
-                    <li><a href="notifierlist.html" class="c-profile-menu__url c-profile-menu__url--notif ">فکتورهای پرداخت نشده</a></li>
-                    <li><a href="notification.html" class="c-profile-menu__url c-profile-menu__url--notification">گزارش مشکلات</a></li>
+                    <li><a href="/favorite" class="c-profile-menu__url c-profile-menu__url--wishlist">لیست علاقه مندی ها</a></li>
+                    <li><a href="/basket" class="c-profile-menu__url c-profile-menu__url--return">سبد خرید</a></li>
+                    <li><a href="/factor" class="c-profile-menu__url c-profile-menu__url--gifts">خریدهای انجام شده</a></li>
+                    <li><a href="{{ route('factorfaild') }}" class="c-profile-menu__url c-profile-menu__url--notif ">فاکتورهای پرداخت نشده</a></li>
+                    <li><a href="/supportt" class="c-profile-menu__url c-profile-menu__url--notification">گزارش مشکلات</a></li>
                 </ul>
             </div>
         </div>

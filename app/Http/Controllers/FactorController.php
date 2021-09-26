@@ -18,8 +18,8 @@ class FactorController extends Controller
      */
     public function index()
     {
-        $factors = auth()->user()->factor()->where('status',"paid")->orderBy('created_at', 'DESC')->get();
-        return view('site.factor', compact('factors'));
+        $factors = auth()->user()->factor()->where('status',1)->orderBy('created_at', 'DESC')->get();
+        return view('persiatc.pages.profile.factor', compact('factors'));
     }
 
     /**
@@ -121,8 +121,8 @@ class FactorController extends Controller
 
     public function showFaild() {
 
-        $factors = auth()->user()->factor()->where('status',"faild")->orderBy('created_at', 'DESC')->get();
-        return view('site.Faild_factor', compact('factors'));
+        $factors = auth()->user()->factor()->where('status',0)->orderBy('created_at', 'DESC')->get();
+        return view('persiatc.pages.profile.factorfaild', compact('factors'));
     }
 
     public function do_payment_zarinpal($factor) {

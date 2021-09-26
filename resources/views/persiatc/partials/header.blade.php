@@ -3,7 +3,7 @@
     <section class="top-head container">
         <div class="right-head">
             <div class="logo">
-                <a href="{{ url('/') }}"><img style="height: 50px;" src="/persiatc/assets/images/logo/Logo.jpg"></a>
+                <a href="{{ url('/') }}"><img style="height: 50px;"  src="/persiatc/Logo.bmp"></a>
             </div>
             <form action="">
                 {{csrf_field()}}
