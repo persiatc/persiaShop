@@ -41,6 +41,7 @@
                     alert('محصول مورد نظر با موفقیت به سبد خرید اضافه شد');
                     $('.cart-count').text(' ');
                     $('.cart-count').text('[' + data.count + ']');
+                    location.reload();
                 } else if (data.exists == 'exists') {
                     alert('محصول مورد نظر قبلا در سبد خرید شما اضافه شده‌است');
                 }

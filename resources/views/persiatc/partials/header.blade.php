@@ -21,7 +21,7 @@
                     @auth
                         <div class="user-modal" style="right:-64px !important;">
                             <a class="profile" style="margin-right:0px !important;" href="{{route('userpanel')}}"><i class="fa fa-user"></i> پروفایل</a>
-                            <a class="order" href="#" style="margin-right:0px !important;" ><i class="fa fa-folder"></i> پیگیری سفارش</a>
+                            {{-- <a class="order" href="#" style="margin-right:0px !important;" ><i class="fa fa-folder"></i> پیگیری سفارش</a> --}}
                             <a class="nav-link" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();"><i class="fa  fa-sign-out"></i>
