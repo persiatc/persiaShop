@@ -2,95 +2,88 @@
 
 @section('content')
 
-<section class="main-cart container">
-    <div class="o-page__content">
-        <div class="o-headline">
-            <div id="main-cart"><span class="c-checkout-text c-checkout__tab--active">سبد خرید</span><span class="c-checkout__tab-counter">۳</span></div>
-            <div id="sfl-cart"><span class="c-checkout-text">لیست خرید بعدی</span></div>
-        </div>
-        <div class="c-checkout">
-
-            <section class="product-wrapper container">
-                <div class="headline">
-                    <h3>محصولات مرتبط</h3></div>
-                <div id="vpslider" class="swiper-container">
-                    <div class="product-box swiper-wrapper">
-                        <div class="product-item swiper-slide">
-                            <a href="#"><img src="assets/images/965174.jpg" alt=""></a> <a class="title" href="#">گوشی موبایل شیائومی مدل Redmi Note 8 Pro M1906G7G دو سیم‌ کارت</a> <span class="price">۱,۴۳۳,۰۰۰ تومان</span></div>
-                        <div class="product-item swiper-slide">
-                            <a href="#"><img src="assets/images/119240285.jpg" alt=""></a> <a class="title" href="#">کاور مدل SOR-010 مناسب برای گوشی موبایل سامسونگ</a> <span class="price">۲,۴۵۶,۰۰۰ تومان</span></div>
-                        <div class="product-item swiper-slide">
-                            <a href="#"><img src="assets/images/363465.jpg" alt=""></a> <a class="title" href="#">شارژر همراه انکر مدل A1271 PowerCore ظرفیت 20100 م</a> <span class="price">۲۴۶,۰۰۰ تومان</span></div>
-                        <div class="product-item swiper-slide">
-                            <a href="#"><img src="assets/images/112551619.jpg" alt=""></a> <a class="title" href="#">گوشی موبایل سامسونگ مدل Galaxy Note 10 Plus N975F/DS</a> <span class="price">۱,۴۳۳,۰۰۰ تومان</span></div>
-                        <div class="product-item swiper-slide">
-                            <a href="#"><img src="assets/images/111253599.jpg" alt=""></a> <a class="title" href="#">تبلت سامسونگ مدل Galaxy Tab S5e 10.5 LTE 2019 SM-T725</a> <span class="price">۱,۴۳۳,۰۰۰ تومان</span></div>
-                        <div class="product-item swiper-slide">
-                            <a href="#"><img src="assets/images/113944020.jpg" alt=""></a> <a class="title" href="#">اندروید باکس مدل R69</a> <span class="price">۱,۴۳۳,۰۰۰ تومان</span></div>
-                        <div class="product-item swiper-slide">
-                            <a href="#"><img src="assets/images/2901119.jpg" alt=""></a> <a class="title" href="#">دسته بازی هویت مدل G89W</a> <span class="price">۱,۴۳۳,۰۰۰ تومان</span></div>
+<section class="search container">
+    <div class="o-page__aside">
+        <div class="c-listing-sidebar">
+            <div class="c-box">
+                <div class="c-box__header">جستجو در دسته بندی ها:</div>
+                <div class="c-box__content"><input type="text" placeholder="نام محصول یا برند مورد نظر را بنویسید…"></div>
+            </div>
+            {{-- <div class="c-box">
+                <div class="c-filter c-filter--switcher">
+                    <span>فقط کالاهای موجود</span>
+                    <div class="scroll">
+                        <span id="circle">
+                            <input id="circle_input" type="checkbox">
+                        </span>
                     </div>
-                    <div id="vpslider-nbtn" class="slider-nbtn swiper-button-next"></div>
-                    <div id="vpslider-pbtn" class="slider-pbtn swiper-button-prev"></div>
                 </div>
-            </section>
+            </div>
+            <div class="c-box">
+                <div class="c-filter c-filter--switcher">
+                    <span>فقط کالاهای آماده ارسال</span>
+                    <div class="scroll">
+                        <span id="circle">
+                            <input id="circle_input" type="checkbox">
+                        </span>
+                    </div>
+                </div>
+            </div> --}}
         </div>
     </div>
+    <div class="o-page__content">
+        <article>
+            <nav>
+                <ul class="c-breadcrumb">
+                    <li><span>فروشگاه اینترنتی ارتباطات پرشیا</span></li>
+                    {{-- <li><span>۸۵۵,۲۶۷ کالا</span></li> --}}
+                </ul>
+            </nav>
+            <div class="c-listing">
+                <div class="c-listing__header">
+                    <ul class="c-listing__sort" data-label="مرتب‌سازی بر اساس :">
+                        <li><span>دسته های اصلی :</span></li>
+                        <?php foreach ($categories as $category): ?>
+                        <li><a href="{{ route('cat.show',['cat'=>$category->id]) }}" class="@if($cat->id == $category->id) is-active @endif">{{$category->fa_name}}</a></li>
+                        <?php endforeach; ?>
 
-</section>
-<section class="cart-empty container" id="cart-sfl">
-    <div class="cart-sfl__icon"></div>
-    <div class="cart-empty__title" style="font-size: 2em;"> لیست خرید بعدی شما خالی است! </div>
-    <div class="cart-sfl__links">
-        <p>شما می‌توانید محصولاتی که به سبد خرید خود افزوده‌اید و فعلا قصد خرید آن‌ها را ندارید، در لیست خرید بعدی قرار داده و هر زمان مایل بودید آن‌ها را به سبد خرید اضافه کرده و خرید آن‌ها را تکمیل کنید. </p>
+                    </ul>
+                    {{-- <ul class="c-listing__type">
+                        <li><button><i class="fa fa-bars"></i></button></li>
+                        <li><button class="is-active"><i class="fa fa-grip-horizontal"></i></button></li>
+                    </ul> --}}
+                </div>
+                <ul class="c-listing__items">
+                    <?php foreach ($pros as $pro): ?>
+                    <li>
+                        <div class="c-product-box c-promotion-box ">
+                        <a href="{{ url('pro/'.$pro->id) }}" class="c-product-box__img c-promotion-box__image">
+                            <img src="/{{$pro->image}}" alt="{{$pro->name}}">
+                        </a>
+                        <div class="c-product-box__content">
+                            <a href="{{ url('pro/'.$pro->id) }}" class="title">{{$pro->name}}</a>
+                            <span class="price">{{$pro->price}} تومان</span>
+                        </div>
+                        <div class="c-product-box__tags">
+                            {{-- <span class="c-tag c-tag--rate">۳.۹</span> --}}
+                        </div>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+                {{-- <div class="c-pager">
+                    <ul class="c-pager__items">
+                        <li><a class="c-pager__item is-active" href="#">1</a></li>
+                        <li><a class="c-pager__item" href="#">2</a></li>
+                        <li><a class="c-pager__item" href="#">3</a></li>
+                        <li><a class="c-pager__item" href="#">4</a></li>
+                        <li><a class="c-pager__item" href="#">>></a></li>
+                    </ul>
+                </div> --}}
+            </div>
+        </article>
     </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="product-wrapper container">
-    <div class="headline">
-        <h3>محصولات مرتبط</h3></div>
-    <div id="vpslider" class="swiper-container">
-        <div class="product-box swiper-wrapper">
-            <div class="product-item swiper-slide">
-                <a href="#"><img src="assets/images/965174.jpg" alt=""></a> <a class="title" href="#">گوشی موبایل شیائومی مدل Redmi Note 8 Pro M1906G7G دو سیم‌ کارت</a> <span class="price">۱,۴۳۳,۰۰۰ تومان</span></div>
-            <div class="product-item swiper-slide">
-                <a href="#"><img src="assets/images/119240285.jpg" alt=""></a> <a class="title" href="#">کاور مدل SOR-010 مناسب برای گوشی موبایل سامسونگ</a> <span class="price">۲,۴۵۶,۰۰۰ تومان</span></div>
-            <div class="product-item swiper-slide">
-                <a href="#"><img src="assets/images/363465.jpg" alt=""></a> <a class="title" href="#">شارژر همراه انکر مدل A1271 PowerCore ظرفیت 20100 م</a> <span class="price">۲۴۶,۰۰۰ تومان</span></div>
-            <div class="product-item swiper-slide">
-                <a href="#"><img src="assets/images/112551619.jpg" alt=""></a> <a class="title" href="#">گوشی موبایل سامسونگ مدل Galaxy Note 10 Plus N975F/DS</a> <span class="price">۱,۴۳۳,۰۰۰ تومان</span></div>
-            <div class="product-item swiper-slide">
-                <a href="#"><img src="assets/images/111253599.jpg" alt=""></a> <a class="title" href="#">تبلت سامسونگ مدل Galaxy Tab S5e 10.5 LTE 2019 SM-T725</a> <span class="price">۱,۴۳۳,۰۰۰ تومان</span></div>
-            <div class="product-item swiper-slide">
-                <a href="#"><img src="assets/images/113944020.jpg" alt=""></a> <a class="title" href="#">اندروید باکس مدل R69</a> <span class="price">۱,۴۳۳,۰۰۰ تومان</span></div>
-            <div class="product-item swiper-slide">
-                <a href="#"><img src="assets/images/2901119.jpg" alt=""></a> <a class="title" href="#">دسته بازی هویت مدل G89W</a> <span class="price">۱,۴۳۳,۰۰۰ تومان</span></div>
-        </div>
-        <div id="vpslider-nbtn" class="slider-nbtn swiper-button-next"></div>
-        <div id="vpslider-pbtn" class="slider-pbtn swiper-button-prev"></div>
-    </div>
-</section>
-
 
 
 @endsection
