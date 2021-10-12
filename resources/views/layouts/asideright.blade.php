@@ -29,7 +29,7 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">منو</li>
-      <li class="active treeview">
+      <li class="active ">
         <a href="{{route('home')}}">
           <i class="fa fa-home"></i>
             <span>خانه اصلی</span>
@@ -83,14 +83,14 @@
 
     <li class="treeview">
         <a href="#">
-          <i class="fa fa-dashboard"></i> <span>مدیریت تگ‌ها</span>
+          <i class="fa fa-dashboard"></i> <span>مدیریت برچسب ها</span>
           <span class="pull-left-container">
             <i class="fa fa-angle-right pull-left"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-            <li><a href="{{route('tag.index')}}"><i class="fa fa-circle-o"></i>لیست تگ‌ها</a></li>
-            <li><a href="{{route('tag.create')}}"><i class="fa fa-circle-o"></i>افزودن تگ جدید</a></li>
+            <li><a href="{{route('tag.index')}}"><i class="fa fa-circle-o"></i>لیست برچسب‌ها</a></li>
+            <li><a href="{{route('tag.create')}}"><i class="fa fa-circle-o"></i>افزودن برچسب جدید</a></li>
         </ul>
       </li>
 

@@ -47,31 +47,36 @@ class ProductController extends AdminController
      */
     public function store(Request $request)
     {
+        $this->validate(request(),[
+            'name'=>'required',
+            'brand'=>'required',
+            'discount'=>'nullable|numeric',
+            'price'=>'required|numeric',
+            'category'=>'required',
+            'image'=>'required',
+        ]);
         $tags = $request['tag_id'];
         $user_id = auth()->user()->id;
         $file1 = $request['image'];
         $image = $this->ImageUploader($file1,'images/');
-        $file2 = $request['file'];
-        $file3 = $this->ImageUploader($file2,'files/');
 
-        $this->validate(request(),[
-        'name'=>'required',
-        'producer'=>'required|numeric',
-        'discount'=>'required|numeric',
-        'price'=>'required|numeric',
-        'category'=>'required',
 
-        ]);
         $product = Product::create([
         'name'=>$request['name'],
-        'producer_id'=>$request['producer'],
+        'brand'=>$request['brand'],
         'body'=>$request['body'],
         'discount'=>$request['discount'],
         'price'=>$request['price'],
         'category_id'=>$request['category'],
         'image'=>$image,
-        'file'=>$file3,
+        // 'file'=>$file3,
         ]);
+        if($request['file']){
+            $file2 = $request['file'];
+            $file3 = $this->ImageUploader($file2,'files/');
+            $product->file = $file3;
+            $product->update();
+        }
         $product->tags()->attach($tags);
         return redirect(route('product.index'));
     }
@@ -128,8 +133,8 @@ class ProductController extends AdminController
       }else{
         $val = $product->file;
       }
-        
-       
+
+
       $data = $request->all();
          $product->tags()->sync($data['tag_id']);
       $data['image'] = $image;

@@ -1,4 +1,9 @@
 @extends('layouts.admin')
+@section('direction')
+{{-- <li><a href="#">مثال ها</a></li> --}}
+<li class="active">ویرایش محصول </li>
+@endsection
+
 @section('content')
 <div class="box">
   <div class="box-header">
@@ -47,7 +52,7 @@
                <?php endforeach; ?>
              </select>
           </div>
-            
+
             <div class="form-group">
             <label for="exampleInputPassword1">برچسب‌ها</label>
              <select class="form-control" name="tag_id[]" multiple>
@@ -60,7 +65,7 @@
                <?php endforeach; ?>
              </select>
           </div>
-            
+
           <div class="form-group">
             <label for="exampleInputPassword1">قیمت محصول</label>
             <input name="price" type="text" class="form-control" id="exampleInputPassword1" value="{{$product->price}}">
@@ -77,13 +82,13 @@
             <input name="image" type="file" id="exampleInputFile">
 
           </div>
-            
-             
 
-            
+
+
+
             <div class="form-group">
             <label for="exampleInputFile">فایل محصول</label>
-              
+
             <input name="file" type="file" id="exampleInputFile">
 
           </div>

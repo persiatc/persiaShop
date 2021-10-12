@@ -11,7 +11,7 @@ class Product extends Model
     use Rateable;
   // use Searchable;
   protected $fillable = [
-      'name', 'producer_id', 'category_id', 'type_id', 'price', 'status', 'special',
+      'name', 'producer_id', 'category_id', 'type_id', 'price', 'status', 'special', 'brand',
       'sales_number', 'discount', 'image', 'file', 'body', 'download_number', 'click_number',
   ];
 
@@ -27,7 +27,7 @@ class Product extends Model
   public function basket(){
       return $this->hasMany(Basket::class);
   }
-    
+
     public function favorite(){
       return $this->hasMany(Favorite::class);
     }
