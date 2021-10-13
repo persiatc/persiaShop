@@ -32,7 +32,7 @@
             <input name="brand" type="text" class="form-control" id="brand" value="{{$product->brand}}">
           </div>
 
-          {{-- <div class="form-group">
+           <!--<div class="form-group">
             <label for="exampleInputPassword1">تولیدکننده</label>
              <select class="form-control" name="producer_id">
                <?php foreach ($producers as $producer): ?>
@@ -43,7 +43,7 @@
                  <?php endif; ?>
                <?php endforeach; ?>
              </select>
-          </div> --}}
+          </div>-->
 
           <div class="form-group">
             <label for="exampleInputPassword1">دسته‌بندی</label>
