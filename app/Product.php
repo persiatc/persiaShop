@@ -12,7 +12,7 @@ class Product extends Model
   // use Searchable;
   protected $fillable = [
       'name', 'producer_id', 'category_id', 'type_id', 'price', 'status', 'special', 'brand',
-      'sales_number', 'discount', 'image', 'file', 'body', 'download_number', 'click_number',
+      'sales_number', 'discount', 'image', 'file', 'body', 'download_number', 'click_number', 'number',
   ];
 
   public function producer(){

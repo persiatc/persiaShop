@@ -1,4 +1,9 @@
 @extends('layouts.admin')
+@section('direction')
+{{-- <li><a href="#">مثال ها</a></li> --}}
+<li class="active">  کاربران  </li>
+@endsection
+
 @section('content')
 <div class="box">
   <div class="box-header">
@@ -37,7 +42,7 @@
                 <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 140.7px;" aria-sort="ascending" aria-label="نام کاربر: activate to sort column descending">نام کاربر</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 269.483px;" aria-label="ایمیل: activate to sort column ascending">ایمیل</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 73.35px;" aria-label="مدیریت دسترسی‌ها: activate to sort column ascending">مدیریت دسترسی‌ها</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 73.35px;" aria-label="حذف: activate to sort column ascending">حذف</th>
+                {{-- <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 73.35px;" aria-label="حذف: activate to sort column ascending">حذف</th> --}}
               </tr>
             </thead>
             <tbody>
@@ -51,7 +56,7 @@
                         <a href="{{route('user.edit', ['user'=>$user->id])}}" type="button" class="btn btn-block btn-warning">مدیریت سطح دسترسی</a>
                       @endcan
                   </td>
-                  <td>
+                  {{-- <td>
                       @can('user_delete')
                         <form class="" action="{{route('user.destroy', ['user'=>$user->id])}}" method="post">
                           {{csrf_field()}}
@@ -59,7 +64,7 @@
                           <button type="submit" class="btn btn-block btn-danger">حذف</button>
                         </form>
                       @endcan
-                  </td>
+                  </td> --}}
                 </tr>
               <?php endforeach; ?>
             </tbody>

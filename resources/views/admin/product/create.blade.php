@@ -45,6 +45,11 @@
             <input name="brand" type="text" class="form-control" id="brand" value="{{old('brand')}}">
           </div>
 
+          <div class="form-group">
+            <label for="number">تعداد موجود از کالا </label>
+            <input name="number" type="text" class="form-control" id="number" value="{{old('number')}}">
+          </div>
+
           <!--<div class="form-group">
             <label for="exampleInputPassword1">تولیدکننده <span style="color:red">*</span></label>
              <select class="form-control" name="producer">
@@ -53,7 +58,7 @@
                <?php endforeach; ?>
              </select>
           </div> -->
-          <div class="form-group">
+          {{-- <div class="form-group">
             <label>چند انتخابی</label>
             <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
                     style="width: 100%;">
@@ -65,7 +70,7 @@
               <option>تبریز</option>
               <option>کرج</option>
             </select>
-          </div>
+          </div> --}}
 
           <div class="form-group">
             <label for="exampleInputPassword1">

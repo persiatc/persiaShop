@@ -32,6 +32,11 @@
             <input name="brand" type="text" class="form-control" id="brand" value="{{$product->brand}}">
           </div>
 
+          <div class="form-group">
+            <label for="number">تعداد موجود از کالا </label>
+            <input name="number" type="text" class="form-control" id="number" value="{{$product->number}}">
+          </div>
+
            <!--<div class="form-group">
             <label for="exampleInputPassword1">تولیدکننده</label>
              <select class="form-control" name="producer_id">
@@ -110,7 +115,11 @@
           <div class="form-group">
             <label for="exampleInputFile">توضیحات محصول</label>
           </div>
-          <textarea name="body" rows="8" cols="140">{{$product->body}}</textarea>
+          <textarea name="body" id ="body" rows="8" cols="140" class="ckeditor">{{$product->body}}</textarea>
+          <script type="text/javascript">
+            CKEDITOR.replace( 'body' );
+         </script>
+          {{-- <textarea name="body" rows="8" cols="140">{{$product->body}}</textarea> --}}
 
         </div>
         <!-- /.box-body -->

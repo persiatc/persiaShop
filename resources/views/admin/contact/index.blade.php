@@ -1,4 +1,8 @@
 @extends('layouts.admin')
+@section('direction')
+{{-- <li><a href="#">مثال ها</a></li> --}}
+<li class="active">  پیام‌های ارتباط با ما</li>
+@endsection
 @section('content')
 <div class="box">
   <div class="box-header">

@@ -1,8 +1,13 @@
 @extends('layouts.admin')
+@section('direction')
+{{-- <li><a href="#">مثال ها</a></li> --}}
+<li class="active">  برچسب  </li>
+@endsection
+
 @section('content')
 <div class="box">
   <div class="box-header">
-    <h3 class="box-title">لیست تگ‌ها</h3>
+    <h3 class="box-title">لیست برچسب</h3>
   </div>
   <!-- /.box-header -->
   <div class="box-body">

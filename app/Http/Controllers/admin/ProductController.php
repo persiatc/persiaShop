@@ -67,7 +67,8 @@ class ProductController extends AdminController
         'body'=>$request['body'],
         'discount'=>$request['discount'],
         'price'=>$request['price'],
-        'category_id'=>$request['category'],
+        'category_id'=>$request['number'],
+        'number'=>$request['category'],
         'image'=>$image,
         // 'file'=>$file3,
         ]);

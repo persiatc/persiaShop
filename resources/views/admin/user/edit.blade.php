@@ -1,4 +1,9 @@
 @extends('layouts.admin')
+@section('direction')
+{{-- <li><a href="#">مثال ها</a></li> --}}
+<li class="active"> ویرایش کاربر  </li>
+@endsection
+
 @section('content')
 <div class="box">
   <div class="box-header">
@@ -9,7 +14,7 @@
     <!-- general form elements -->
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">مثال ساده</h3>
+        {{-- <h3 class="box-title">مثال ساده</h3> --}}
       </div>
       <!-- /.box-header -->
       <!-- form start -->

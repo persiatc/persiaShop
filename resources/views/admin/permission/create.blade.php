@@ -1,8 +1,12 @@
 @extends('layouts.admin')
+@section('direction')
+{{-- <li><a href="#">مثال ها</a></li> --}}
+<li class="active"> افزودن دسترسی  </li>
+@endsection
 @section('content')
 <div class="box">
   <div class="box-header">
-    <h3 class="box-title">افزودن دسترسی جدید</h3>
+    <h3 class="box-title">افزودن دسترسی جدید </h3>
   </div>
   <!-- /.box-header -->
   <div class="col-md-12">
