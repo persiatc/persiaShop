@@ -59,7 +59,7 @@
                 <tr role="row" class="odd">
                   <td class="sorting_1">{{$product->name}}</td>
                   <td>{{$product->category->fa_name}}</td>
-                  <td>{{$product->producer->name}}</td>
+                  {{-- <td>{{$product->producer->name}}</td> --}}
                   <td>{{$product->brand}}</td>
 
                   <td>{{$product->body}}</td>
@@ -70,6 +70,8 @@
                   <td>{{$product->download_number}}</td>
                   <td>
                     <img src="/{{$product->image}}" alt="تصویر محصول" style="width:50px; height:50px">
+                    <a href="#" type="button" class="btn btn-block btn-success">گالری</a>
+
                   </td>
                   <td>
                       @can('product_edit')
