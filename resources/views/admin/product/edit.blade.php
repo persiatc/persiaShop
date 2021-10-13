@@ -14,7 +14,7 @@
     <!-- general form elements -->
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">مثال ساده</h3>
+        {{-- <h3 class="box-title">مثال ساده</h3> --}}
       </div>
       <!-- /.box-header -->
       <!-- form start -->
@@ -23,7 +23,7 @@
         {{method_field('PATCH')}}
         <div class="box-body">
           <div class="form-group">
-            <label for="exampleInputEmail1">نام محصول</label>
+            <label for="exampleInputEmail1">نام محصول<span style="color:red">*</span></label>
             <input name="name" type="text" class="form-control" id="exampleInputEmail1" value="{{$product->name}}">
           </div>
 
@@ -46,7 +46,10 @@
           </div>-->
 
           <div class="form-group">
-            <label for="exampleInputPassword1">دسته‌بندی</label>
+            <label for="exampleInputPassword1">دسته‌بندی
+                <span style="color:red">* (حتما پیش از افزودن محصول ,  دسته بندی آن را <a href="{{route('category.create')}}">اینجا</a> ثبت کنید)</span>
+
+            </label>
              <select class="form-control" name="category_id">
                <?php foreach ($categories as $category): ?>
                  <?php if ($product->category->id == $category->id): ?>
@@ -59,7 +62,10 @@
           </div>
 
             <div class="form-group">
-            <label for="exampleInputPassword1">برچسب‌ها</label>
+            <label for="exampleInputPassword1">برچسب‌ها
+                <span style="color:red">* (حتما پیش از افزودن محصول , برچسب های آن را <a href="{{route('tag.create')}}">اینجا</a> ثبت کنید) </span>
+
+            </label>
              <select class="form-control" name="tag_id[]" multiple>
                <?php foreach ($tags as $tag): ?>
                  <?php if ($protag->contains('id',$tag->id)): ?>
@@ -72,15 +78,19 @@
           </div>
 
           <div class="form-group">
-            <label for="exampleInputPassword1">قیمت محصول</label>
+            <label for="exampleInputPassword1">
+                قیمت محصول <span style="color:red">
+                    * (در صورت ۰ قرار دادن قیمت  محصول کاربر برای مطلع شدن از قیمت باید تماس بگیرد و درصورت درج قیمت کاربر قیمت محصول را میبیند)
+                  </span>
+            </label>
             <input name="price" type="text" class="form-control" id="exampleInputPassword1" value="{{$product->price}}">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">تخفیف</label>
+            <label for="exampleInputPassword1">تخفیف<span style="color:red">(سیستم عدد وارد شده را به صورت درصد درنظر میگیرد)</span></label>
             <input name="discount" type="text" class="form-control" id="exampleInputPassword1" value="{{$product->discount}}">
           </div>
           <div class="form-group">
-            <label for="exampleInputFile">تصویر محصول</label>
+            <label for="exampleInputFile">تصویر شاخص محصول</label>
               <div class="form-group">
               <img src="/{{$product->image}}" alt="{{$product->name}}" style="height:100px; width:100px">
             </div>

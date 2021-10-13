@@ -31,7 +31,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">دسته‌بندی محصول
-                <span style="color:red">* (حتما پیش از افزودن محصول ,  دسته بندی آن را <a href="{{route('tag.create')}}">اینجا</a> ثبت کنید)</span>
+                <span style="color:red">* (حتما پیش از افزودن محصول ,  دسته بندی آن را <a href="{{route('category.create')}}">اینجا</a> ثبت کنید)</span>
             </label>
              <select class="form-control" name="category">
                <?php foreach ($categories as $category): ?>
