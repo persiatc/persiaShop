@@ -42,7 +42,7 @@
               <tr role="row">
                 <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 140.7px;" aria-sort="ascending" aria-label="نام محصول: activate to sort column descending">نام محصول</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 73.35px;" aria-label="دسته‌بندی: activate to sort column ascending">دسته‌بندی</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 269.483px;" aria-label="تولیدکننده: activate to sort column ascending">تولیدکننده</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 269.483px;" aria-label="تولیدکننده: activate to sort column ascending">تولیدکننده یا برند</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 269.483px;" aria-label="توضیحات: activate to sort column ascending">توضیحات</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 258.683px;" aria-label="قیمت: activate to sort column ascending">قیمت</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 68.7833px;" aria-label="تخفیف: activate to sort column ascending">تخفیف</th>
@@ -60,6 +60,8 @@
                   <td class="sorting_1">{{$product->name}}</td>
                   <td>{{$product->category->fa_name}}</td>
                   <td>{{$product->producer->name}}</td>
+                  <td>{{$product->brand}}</td>
+
                   <td>{{$product->body}}</td>
                   <td>{{number_format($product->price)}}</td>
                   <td>{{$product->discount}}</td>
