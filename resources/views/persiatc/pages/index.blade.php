@@ -264,7 +264,7 @@
                             @elseif($favorite->discount == 0 && $favorite->price != 0)
                                 <span class="price">{{$favorite->price}} تومان</span>
                             @elseif($favorite->price == 0)
-                            <span class="price">تماس بگیرید</span>
+                            <span class="price">برای اطلاع از قیمت ها بگیرید</span>
                             @endif
 
                         </div>
