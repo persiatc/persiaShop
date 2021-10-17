@@ -46,6 +46,11 @@ class Product extends Model
       return $this->morphToMany(Tag::class,"taggable");
   }
 
+  public function images()
+    {
+        return $this->morphMany(Image::class, "imageable");
+    }
+
 
   public static function search($data, $products){
     if(sizeof($data) > 0){

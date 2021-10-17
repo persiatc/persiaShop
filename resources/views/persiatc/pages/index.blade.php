@@ -8,18 +8,18 @@
     </div>-->
     <div id="mainslider" class="main-slider swiper-container">
         <div class="swiper-wrapper">
-            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/assets/images/slider/slide6.jpg)"> </a>
-            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/assets/images/slider/slide7.jpg)"> </a>
-            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/assets/images/slider/slide8.jpg)"> </a>
-            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/assets/images/slider/slide9.jpg)"> </a>
+            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner/Banner/B1.jpg)"> </a>
+            {{-- <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/assets/images/slider/slide7.jpg)"> </a> --}}
+            {{-- <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/assets/images/slider/slide8.jpg)"> </a> --}}
+            {{-- <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/assets/images/slider/slide9.jpg)"> </a> --}}
         </div>
         <div id="mslider-nbtn" class="swiper-button-next"></div>
         <div id="mslider-pbtn" class="swiper-button-prev"></div>
         <div class="swiper-pagination mainslider-btn"></div>
     </div>
     <aside class="c-adplacement">
-        <a href="#"><img src="persiatc/assets/images/slider/1000020035.gif" alt=""></a>
-        <a href="#"><img src="persiatc/assets/images/slider/1000020024.jpg" alt=""></a>
+        <a href="#"><img src="persiatc/banner/Banner/01.jpg" alt=""></a>
+        <a href="#"><img src="persiatc/banner/Banner/02.jpg" alt=""></a>
     </aside>
 </article>
 <div class="clear"></div>
@@ -270,7 +270,7 @@
             </div>
         </section>
         <section class="image-row container">
-            <a href="#"><img style="max-width: 100%" src="persiatc/assets/images/banner-2.jpg" alt=""></a>
+            <a href="#"><img style="max-width: 100%" src="persiatc/banner/Banner/banner-2.jpg" alt=""></a>
         </section>
 
 
@@ -325,8 +325,8 @@
 
 
         <section class="image-row container">
-            <a href="#"><img src="persiatc/assets/images/1000020363.jpg" alt=""></a>
-            <a href="#"><img src="persiatc/assets/images/1000020196.jpg" alt=""></a>
+            <a href="#"><img src="persiatc/banner/Banner/03.jpg" alt=""></a>
+            <a href="#"><img src="persiatc/banner/Banner/04.jpg" alt=""></a>
         </section>
         <section class="product-wrapper container">
             <div class="headline">

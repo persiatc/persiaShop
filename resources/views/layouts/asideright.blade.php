@@ -40,7 +40,7 @@
        ?>
       <li class="treeview {{ (Request::is('admin/permission/create') ? 'active' : '') }} {{ (Request::is('admin/permission') ? 'active' : '') }} {{ (Request::is('admin/user') ? 'active' : '') }} {{ (Request::is('admin/role') ? 'active' : '') }} {{ (Request::is('admin/role/create') ? 'active' : '') }}">
         <a href="#">
-          <i class="fa fa-dashboard"></i> <span>مدیریت کاربران</span>
+          <i class="fa fa-users"></i> <span>مدیریت کاربران</span>
           <span class="pull-left-container">
             <i class="fa fa-angle-right pull-left"></i>
           </span>
@@ -61,7 +61,7 @@
       </li>
       <li class="treeview {{ (Request::is('admin/category/create') ? 'active' : '') }} {{ (Request::is('admin/category') ? 'active' : '') }} {{ (Request::is('admin/product') ? 'active' : '') }} {{ (Request::is('admin/product/create') ? 'active' : '') }}">
         <a href="#">
-          <i class="fa fa-dashboard"></i> <span>مدیریت محصول</span>
+          <i class="fa fa-cubes"></i> <span>مدیریت محصول</span>
           <span class="pull-left-container">
             <i class="fa fa-angle-right pull-left"></i>
           </span>
@@ -83,7 +83,7 @@
 
     <li class="treeview {{ (Request::is('admin/tag/create') ? 'active' : '') }} {{ (Request::is('admin/tag') ? 'active' : '') }}">
         <a href="#">
-          <i class="fa fa-dashboard"></i> <span>مدیریت برچسب ها</span>
+          <i class="fa fa-tags"></i> <span>مدیریت برچسب ها</span>
           <span class="pull-left-container">
             <i class="fa fa-angle-right pull-left"></i>
           </span>
@@ -94,10 +94,10 @@
         </ul>
       </li>
 
-    
+
       <li class="treeview {{ (Request::is('admin/support') ? 'active' : '') }} {{ (Request::is('admin/contact') ? 'active' : '') }} {{ (Request::is('admin/comment') ? 'active' : '') }}">
         <a href="#">
-          <i class="fa fa-dashboard"></i> <span>مدیریت نظرات</span>
+          <i class="fa fa-comments"></i> <span>مدیریت نظرات</span>
           <span class="pull-left-container">
             <i class="fa fa-angle-right pull-left"></i>
           </span>
@@ -113,7 +113,7 @@
       </li>
     <li class="treeview {{ (Request::is('admin/post/create') ? 'active' : '') }} {{ (Request::is('admin/post') ? 'active' : '') }}">
         <a href="#">
-          <i class="fa fa-dashboard"></i> <span>مدیریت پست‌ها</span>
+          <i class="fa fa-files-o"></i> <span>مدیریت پست‌ها</span>
           <span class="pull-left-container">
             <i class="fa fa-angle-right pull-left"></i>
           </span>

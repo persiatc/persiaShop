@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Product;
-use App\Producer;
-use App\Category;
 use App\Tag;
+use App\Image;
+use App\Product;
+use App\Category;
+use App\Producer;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
 
 class ProductController extends AdminController
 {
@@ -158,4 +160,76 @@ class ProductController extends AdminController
         $product->delete();
         return redirect(route('product.index'));
     }
+
+
+
+     /**
+     * Image Upload Code
+     *
+     * @param Attraction $attraction
+     * @return Application|Factory|View|void
+     */
+    public function createGallery(Product $product)
+    {
+        return view('admin.product.gallery', [
+            'product' => $product
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function addGallery(Request $request): JsonResponse
+    {
+        $product = Product::find($request->value_id);
+        $image = $request->file('file');
+        $path = 'products/gallery/product_' . $product->id . '/';
+        $imageName = $this->ImageUploader($image, $path);
+
+        $imageUpload = new Image();
+        $imageUpload->url = $imageName;
+        $imageUpload->type = '1';
+        $product->images()->save($imageUpload);
+        return response()->json(['success' => $imageName]);
+
+    }
+
+    /**
+     * @param $id
+     * @return RedirectResponse
+     */
+    public function galleryDestroy($id): RedirectResponse
+    {
+        $image = Image::find($id);
+        if (file_exists($image->url)) {
+            unlink($image->url);
+        }
+        $image->delete();
+        return back();
+
+    }
+
+
+     /**
+     * @Date: 2021-02-03 11:48:52
+     * @Desc: destroy all image from gallery
+     * @param Attraction $attraction
+     * @return RedirectResponse
+     */
+    public function AllGalleryDestroy(Attraction $attraction): RedirectResponse
+    {
+        if (!empty($attraction->images()->first())) {
+            foreach ($attraction->images as $image) {
+                unlink($image->url) or die('Delete Error');
+                $image->delete();
+            }
+            session()->flash('alert-success', 'اطلاعات با موفقیت حذف شد');
+        } else {
+            session()->flash('alert-danger', 'عکسی برای حذف کردن یافت نشد!');
+        }
+        return back();
+
+    }
+
 }

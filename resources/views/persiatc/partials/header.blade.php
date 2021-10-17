@@ -5,11 +5,11 @@
             <div class="logo">
                 <a href="{{ url('/') }}"><img style="height: 50px;"  src="/persiatc/Logo.bmp"></a>
             </div>
-            <form action="">
+            {{-- <form action="">
                 {{csrf_field()}}
                 <button type="submit"><i class="fa fa-search"></i></button>
                 <input type="text"  name="name" placeholder="محصول مورد نظر">
-            </form>
+            </form> --}}
         </div>
         <div class="left-head">
             <div class="login-box">

@@ -69,6 +69,12 @@ Route::group(['namespace'=>'admin','middleware'=>['auth','UserLevel'],'prefix'=>
     Route::resource('/contact', 'ContactController');
     Route::resource('/support', 'SupportController');
 
+    Route::get('create/gallery/{product}', 'ProductController@createGallery')->name('create.gallery');
+    Route::get('delete/gallery/{id}', 'ProductController@galleryDestroy')->name('delete.gallery');
+    Route::post('add/gallery', 'ProductController@addGallery')->name('add.gallery')->middleware('optimizeImages');
+    Route::get('delete/allgallery/{product}', 'ProductController@AllGalleryDestroy')->name('delete.allgallery');
+
+
 
 
 
@@ -86,3 +92,22 @@ Route::group(['middleware'=>['auth']],function(){
 
 //==================Ajax Routes End==========================
 
+
+
+// <IfModule mod_rewrite.c>
+//   RewriteEngine On
+//   RewriteRule ^(.*)$ public/$1 [L]
+// </IfModule>
+
+
+
+
+// RewriteBase /
+
+// RewriteCond %{HTTP_HOST} !^eshop.persiatelecom.ir
+// RewriteCond %{REQUEST_URI} !^public
+// RewriteRule ^(.*)$ public/$1 [L]
+
+// RewriteCond %{HTTP_HOST} ^eshop.persiatelecom.ir
+// RewriteCond %{REQUEST_URI} !^public
+// RewriteRule ^(.*)$ public/ [L]

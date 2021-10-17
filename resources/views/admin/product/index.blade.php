@@ -74,7 +74,7 @@
 
                   <td>
                     <img src="/{{$product->image}}" alt="تصویر محصول" style="width:50px; height:50px">
-                    <a href="#" type="button" class="btn btn-block btn-success">گالری</a>
+                    <a href="{{ route('create.gallery' , ['product' => $product]) }}" type="button" class="btn btn-block btn-success">گالری</a>
 
                   </td>
                   <td>
