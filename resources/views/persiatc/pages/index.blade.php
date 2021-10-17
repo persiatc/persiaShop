@@ -264,7 +264,7 @@
                             @elseif($favorite->discount == 0 && $favorite->price != 0)
                                 <span class="price">{{$favorite->price}} تومان</span>
                             @elseif($favorite->price == 0)
-                            <span style="color:red" class="price">برای اطلاع از قیمت ها بگیرید.</span>
+                            <span style="color:red" class="price">برای اطلاع از قیمت هاتماس بگیرید.</span>
                             @endif
 
                         </div>
@@ -293,11 +293,24 @@
                                 <img style="height:200px; width:200px;" src="/{{$bestseller->image}}" alt="{{$bestseller->name}}">
                             </a>
                             <a class="title" href="{{ url('pro/'.$bestseller->id) }}">{{$bestseller->name}}</a>
+
+                            @if($bestseller->discount != 0 && $bestseller->price != 0)
                             <div class="inc-product-price">
                                 <del>{{$bestseller->price}}</del>
                                 <div class="c-price__discount-oval"><span>{{$bestseller->discount}}٪</span></div>
-                                <span class="price">{{(1-($bestseller->discount)/100)*$bestseller->price}}</span>تومان
+                                <span class="price">{{(1-($bestseller->discount)/100)*$bestseller->price}}</span> تومان
                             </div>
+                            @elseif($bestseller->discount == 0 && $bestseller->price != 0)
+                                <span class="price">{{$bestseller->price}} تومان</span>
+                            @elseif($bestseller->price == 0)
+                            <span style="color:red" class="price">برای اطلاع از قیمت هاتماس بگیرید.</span>
+                            @endif
+
+                            {{-- <div class="inc-product-price">
+                                <del>{{$bestseller->price}}</del>
+                                <div class="c-price__discount-oval"><span>{{$bestseller->discount}}٪</span></div>
+                                <span class="price">{{(1-($bestseller->discount)/100)*$bestseller->price}}</span>تومان
+                            </div> --}}
                             {{-- <span class="price">۲,۴۵۶,۰۰۰ تومان</span> --}}
                         </div>
                     <?php endforeach; ?>
