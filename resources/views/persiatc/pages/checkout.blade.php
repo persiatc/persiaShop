@@ -1,7 +1,12 @@
-@extends('persiatc.layouts.master', ['title'=> 'فروشگاه اینترنتی'])
+@extends('persiatc.layouts.cart-master', ['title'=> 'فروشگاه اینترنتی'])
 
 @section('content')
 
+<header class="shipping">
+    <div class="logo container">
+        <a href="#"><img style="width: 90px;" src="/persiatc/banner/PersiaLogo.png"></a>
+    </div>
+</header>
 <main class="main-cart container">
     <ul class="c-checkout-steps">
         <li class="is-active">
@@ -34,19 +39,32 @@
                     <button id="change-sh-address" class="c-checkout-contact__location">تغییر آدرس ارسال</button>
                 </div>
             </div>
+            <?php
+            $discount = 0;
+            $sum = 0;
+            $ids = [];
+          ?>
             <form action="#">
                 <div>
-                    <div class="o-headline o-headline--checkout"> <span>مرسوله ۱ از ۱</span></div>
+                    <div class="o-headline o-headline--checkout"> <span>جزییات</span></div>
                     <div class="c-checkout-pack">
                         <div class="c-checkout-pack__row">
+                            <?php foreach ($baskets as $basket): ?>
+                            <?php
+                                $product = App\Product::find($basket->product_id);
+                                $sum += $product->price;
+                                $discount += $product->discount/100*$product->price;
+                                array_push($ids, $basket->id)
+                            ?>
                             <div class="c-product-box c-product-box--compact">
-                                <a href="#" class="c-product-box__img"><img src="assets/images/119350700s.jpg" alt=""></a>
-                                <div class="c-product-box__title">تبلت سامسونگ مدل GALAXY TAB S6 ظرفیت 128 گیگابایت</div>
+                                <a href="#" class="c-product-box__img"><img src="/{{$product->image}}" alt=""></a>
+                                <div class="c-product-box__title">{{$product->name}}</div>
                             </div>
-                            <div class="c-product-box c-product-box--compact">
+                            <?php endforeach; ?>
+                            {{-- <div class="c-product-box c-product-box--compact">
                                 <a href="#" class="c-product-box__img"><img src="assets/images/112309225s.jpg" alt=""></a>
                                 <div class="c-product-box__title"> دسته بازی بی سیم یوکام کد 8008 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="c-checkout-pack__row">
                             <div class="c-checkout-time-table">
@@ -72,7 +90,7 @@
             </div>
         </div>
         <div class="c-checkout__actions">
-            <button class="btn-link-spoiler">« بازگشت به سبد خرید </button>
+            <a href="/basket" class="btn-link-spoiler">« بازگشت به سبد خرید </a>
         </div>
     </div>
     <aside class="o-page__aside">
@@ -80,18 +98,18 @@
             <div class="c-checkout-summary">
                 <ul class="c-checkout-summary__summary">
                     <li>
-                        <span>قیمت کالاها (۱)</span>
-                        <span> ۱۹۸,۲۰۰ تومان </span>
+                    <span>قیمت کالاها (۱)</span>
+                    <span> {{$sum}} تومان </span>
                     </li>
                     <!--incredible-->
                     <li class="c-checkout-summary__discount">
                         <span> تخفیف کالاها </span>
-                        <span class="discount-price">۱,۵۰۰ تومان</span>
+                        <span class="discount-price">{{$discount}}  تومان</span>
                     </li>
                     <!--incredible-->
                     <li class="has-devider">
                         <span>جمع</span>
-                        <span> ۱۹۶,۷۰۰ تومان </span>
+                        <span> {{$sum - $discount}} تومان </span>
                     </li>
                     <li>
                         <span>هزینه ارسال</span>
@@ -103,21 +121,26 @@
                     </li>
                     <li class="has-devider">
                         <span> مبلغ قابل پرداخت </span>
-                        <span> ۱۹۶,۷۰۰ تومان </span>
+                        <span> {{$sum - $discount}} تومان </span>
                     </li>
-                    <li class="pd-10">
+                    {{-- <li class="pd-10">
                         <span> <i class="fa fa-money"></i> امتیاز دیجی کلاب</span>
                         <span> ۲۰ امتیاز </span>
-                    </li>
+                    </li> --}}
                 </ul>
+                <div class="c-checkout-summary__main">
+                    <div class="c-checkout-summary__content">
+                        <div><span> کالاهای موجود در سبد شما ثبت و رزرو نشده‌اند، برای ثبت سفارش مراحل بعدی را تکمیل کنید.</span></div>
+                    </div>
+                </div>
             </div>
-            <div class="c-checkout-feature-aside">
+            {{-- <div class="c-checkout-feature-aside">
                 <ul>
                     <li class="c-checkout-feature-aside__item c-checkout-feature-aside__item--guarantee">هفت روز ضمانت تعویض</li>
                     <li class="c-checkout-feature-aside__item c-checkout-feature-aside__item--cash">پرداخت در محل با کارت بانکی</li>
                     <li class="c-checkout-feature-aside__item c-checkout-feature-aside__item--express">تحویل اکسپرس</li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
     </aside>
 </main>
