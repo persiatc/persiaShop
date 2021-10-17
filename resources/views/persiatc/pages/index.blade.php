@@ -362,15 +362,23 @@
                     <div class="product-item swiper-slide">
                         <a href="#"><img src="persiatc/assets/images/brand/xvision.png" alt=""></a>
                     </div>
+
                     <div class="product-item swiper-slide">
-                        <a href="#"><img src="persiatc/assets/images/brand/lg.png" alt=""></a>
+                        <a href="#"><img style="width:147px !important; height:147px !important" src="persiatc/brand/motorola-4-282950.png" alt=""></a>
                     </div>
                     <div class="product-item swiper-slide">
-                        <a href="#"><img src="persiatc/assets/images/brand/parskhazar.png" alt=""></a>
+                        <a href="#"><img style="width:147px !important; height:147px !important" src="persiatc/brand/western.png" alt=""></a>
+                    </div>
+
+                    <div class="product-item swiper-slide">
+                        <a href="#"><img style="width:147px !important; height:147px !important" src="persiatc/brand/hikvision.jpg" alt=""></a>
+                    </div>
+                    {{-- <div class="product-item swiper-slide">
+                        <a href="#"><img style="width:147px !important; height:147px !important" src="persiatc/brand/hp.png" alt=""></a>
                     </div>
                     <div class="product-item swiper-slide">
-                        <a href="#"><img src="persiatc/assets/images/brand/xvision.png" alt=""></a>
-                    </div>
+                        <a href="#"><img style="width:147px !important; height:147px !important" src="persiatc/brand/intel_PNG2.png" alt=""></a>
+                    </div> --}}
                 </div>
                 <div id="brandslider-nbtn" class="slider-nbtn swiper-button-next"></div>
                 <div id="brandslider-pbtn" class="slider-pbtn swiper-button-prev"></div>

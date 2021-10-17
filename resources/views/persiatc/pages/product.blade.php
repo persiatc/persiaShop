@@ -6,6 +6,10 @@
     span p{
         font-size:12px !important;
     }
+    .c-box-tabs__tab.is-active:before {
+        background: #7c7c75;
+
+    }
 </style>
 
 @include('persiatc.partials.flash-message')
@@ -236,7 +240,7 @@
             <ul class="c-box-tabs">
                 {{-- <li class="c-box-tabs__tab is-active"><a id="desc" href="#"><i class="fa fa-glasses"></i> <span>نقد و بررسی</span></a></li> --}}
                 {{-- <li class="c-box-tabs__tab is-active"><a id="params" href="#"><i class="fa fa-tasks"></i> <span>مشخصات</span></a></li> --}}
-                <li class="c-box-tabs__tab is-active"><a id="comments" href="#"><i class="fa fa-comments"></i> <span>نظرات کاربران</span></a></li>
+                <li  class="c-box-tabs__tab is-active"><a id="comments" href="#"><i class="fa fa-comments"></i> <span>نظرات کاربران</span></a></li>
                 {{-- <li class="c-box-tabs__tab"><a id="questions" href="#"><i class="fa fa-question-circle"></i> <span>پرسش و پاسخ</span></a></li> --}}
             </ul>
             <div class="c-box--tabs p-tabs__content">
@@ -310,7 +314,7 @@
 
 
                                         <label for="">متن نظر شما (اجباری)</label>
-                                        <textarea name="comment" placeholder="متن نظر خود را بنویسید"></textarea>
+                                        <textarea name="comment" style="border: 1px solid #becd47;width: 800px;" placeholder="متن نظر خود را بنویسید"></textarea>
 
                                         {{-- <label for="">رتبه</label>
                                         <input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1" value="" data-size="xs"> --}}
@@ -318,7 +322,7 @@
                                         <input type="hidden" value="{{ $pro->id }}" name="product_id" >
                                         <input type="hidden" value="{{ auth()->user()->id }}" name="user_id">
 
-                                        <button type="submit" class="btn-add-comment btn-default">
+                                        <button type="submit" class="btn-add-comment">
                                             <span>ارسال نظر جدید</span>
                                         </button>
 
