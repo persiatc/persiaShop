@@ -62,7 +62,20 @@
                         </a>
                         <div class="c-product-box__content">
                             <a href="{{ url('pro/'.$pro->id) }}" class="title">{{$pro->name}}</a>
-                            <span class="price">{{$pro->price}} تومان</span>
+
+                            @if($pro->discount != 0 && $pro->price != 0)
+                            <div class="inc-product-price">
+                                <del>{{$pro->price}}</del>
+                                <div class="c-price__discount-oval"><span>{{$pro->discount}}٪</span></div>
+                                <span class="price">{{(1-($pro->discount)/100)*$pro->price}}</span> تومان
+                            </div>
+                            @elseif($pro->discount == 0 && $pro->price != 0)
+                                <span class="price">{{$pro->price}} تومان</span>
+                            @elseif($pro->price == 0)
+                            <span style="color:red" class="price">برای اطلاع از قیمت هاتماس بگیرید.</span>
+                            @endif
+
+                            {{-- <span class="price">{{$pro->price}} تومان</span> --}}
                         </div>
                         <div class="c-product-box__tags">
                             {{-- <span class="c-tag c-tag--rate">۳.۹</span> --}}

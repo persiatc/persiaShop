@@ -24,15 +24,15 @@
                         <span class="fa-title"> {{$pro->name}} </span>
                         {{-- <span class="en-title">Samsung GALAXY TAB S6 Tablet 128 GB</span> --}}
                     </h1>
-                    <span class="c-product__guaranteed">
-                   امتیاز این محصول {{round($rating, 2)}} از ۵ می باشد
+                    <span class="">
+                   {{-- امتیاز این محصول {{round($rating, 2)}} از ۵ می باشد --}}
                     </span>
                 </div>
                 <div class="c-product__attributes">
                     <div class="c-product__right">
                         <div class="c-product__directory">
                             <ul>
-                                <li> <span>رای : </span> <a href="#" class="btn-link-spoiler">{{count($pro->ratings)}}</a></li>
+                                <li> <span>برند : </span> <a href="#" class="btn-link-spoiler">{{$pro->brand ?? $pro->producer->name}}</a></li>
                                 <li> <span>فروخته شده : </span> <a href="#" class="btn-link-spoiler">{{"   ".$pro->sales_number}}</a></li>
                             </ul>
                         </div>
@@ -51,16 +51,22 @@
                             <div class="delivery-warehouse"> <i class="fa fa-truck"></i><span class="c-product__delivery-warehouse--no-lead-time">آماده ارسال</span></div>
                         </div> --}}
 
-                        <?php if ($pro->discount != 0): ?>
+                        @if ($pro->discount != 0 && $pro->price != 0)
                         <div class="inc-product-price">
                             <del>{{$pro->price}}</del>
                             <div class="c-price__discount-oval"><span>{{$pro->discount}}٪</span></div>
                             <span class="c-price original">{{(1-($pro->discount)/100)*$pro->price}} تومان</span>
                         </div>
                         {{-- <div class="c-price original">۲,۶۶۹,۰۰۰ تومان</div> --}}
-                        <?php else: ?>
+
+                        @elseif($pro->discount == 0 && $pro->price != 0)
                         <div class="c-price original">{{$pro->price}} تومان</div>
-                        <?php endif; ?>
+                        @elseif($pro->price == 0)
+                            <span style="color:red" class="price">برای اطلاع از قیمت هاتماس بگیرید.</span>
+                        @endif
+
+
+
                         @if(Auth::check())
                             <div class="c-product__add"> <a class="btn-add-to-cart add-to-cart" data-id="{{$pro->id}}" href="#"><span>افزودن به سبد خرید</span></a></div>
                         @else
@@ -72,13 +78,13 @@
 
                     </div>
                 </div>
-                <aside class="c-product__feature">
+                {{-- <aside class="c-product__feature">
                     <a class="i-item" href="#"> <img src="assets/images/icon/i1.svg" alt=""> <span>امکان تحویل اکسپرس</span> </a>
                     <a class="i-item" href="#"> <img src="assets/images/icon/i2.svg" alt=""> <span>پشتیبانی ۲۴ ساعته</span> </a>
                     <a class="i-item" href="#"> <img src="assets/images/icon/i3.svg" alt=""> <span>امکان پرداخت در محل</span> </a>
                     <a class="i-item" href="#"> <img src="assets/images/icon/i4.svg" alt=""> <span>۷ روز ضمانت بازگشت کالا</span> </a>
                     <a class="i-item" href="#"> <img src="assets/images/icon/i5.svg" alt=""> <span>ضمانت اصل بودن کالا</span> </a>
-                </aside>
+                </aside> --}}
             </section>
             <section class="c-product__gallery">
                 <div class="c-product__special-deal hidden">
@@ -501,11 +507,23 @@
                             <img src="/{{$item->image}}" alt="">
                         </a>
                         <a class="title" href="#">{{ $item->name }}</a>
+                        @if($item->discount != 0 && $item->price != 0)
                         <div class="inc-product-price">
                             <del>{{$item->price}}</del>
                             <div class="c-price__discount-oval"><span>{{$item->discount}}٪</span></div>
-                            <span class="price">{{(1-($item->discount)/100)*$item->price}}</span>تومان
+                            <span class="price">{{(1-($item->discount)/100)*$item->price}}</span> تومان
                         </div>
+                        @elseif($item->discount == 0 && $item->price != 0)
+                            <span class="price">{{$item->price}} تومان</span>
+                        @elseif($item->price == 0)
+                        <span style="color:red" class="price">برای اطلاع از قیمت هاتماس بگیرید.</span>
+                        @endif
+
+                        {{-- <div class="inc-product-price">
+                            <del>{{$item->price}}</del>
+                            <div class="c-price__discount-oval"><span>{{$item->discount}}٪</span></div>
+                            <span class="price">{{(1-($item->discount)/100)*$item->price}}</span>تومان
+                        </div> --}}
                         {{-- <span class="price">۲,۴۵۶,۰۰۰ تومان</span> --}}
                     </div>
                     @endforeach
