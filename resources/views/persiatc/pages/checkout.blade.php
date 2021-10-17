@@ -57,7 +57,7 @@
                                 array_push($ids, $basket->id)
                             ?>
                             <div class="c-product-box c-product-box--compact">
-                                <a href="#" class="c-product-box__img"><img src="/{{$product->image}}" alt=""></a>
+                                <a href="#" class="c-product-box__img"><img style="width:70px;height:70px" src="/{{$product->image}}" alt=""></a>
                                 <div class="c-product-box__title">{{$product->name}}</div>
                             </div>
                             <?php endforeach; ?>
