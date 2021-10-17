@@ -9,9 +9,9 @@
     <div id="mainslider" class="main-slider swiper-container">
         <div class="swiper-wrapper">
             <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner/Banner/B1.jpg)"> </a>
-            {{-- <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/assets/images/slider/slide7.jpg)"> </a> --}}
-            {{-- <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/assets/images/slider/slide8.jpg)"> </a> --}}
-            {{-- <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/assets/images/slider/slide9.jpg)"> </a> --}}
+            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner/Banner/B1.jpg)"> </a>
+            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner/Banner/B1.jpg)"> </a>
+            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner/Banner/B1.jpg)"> </a>
         </div>
         <div id="mslider-nbtn" class="swiper-button-next"></div>
         <div id="mslider-pbtn" class="swiper-button-prev"></div>
@@ -255,12 +255,18 @@
                                 <img style="height:200px; width:200px;" src="/{{$favorite->image}}" alt="{{$favorite->name}}">
                             </a>
                             <a class="title" href="{{ url('pro/'.$favorite->id) }}">{{$favorite->name}} </a>
+                            @if($favorite->discount != 0 && $favorite->price != 0)
                             <div class="inc-product-price">
                                 <del>{{$favorite->price}}</del>
                                 <div class="c-price__discount-oval"><span>{{$favorite->discount}}٪</span></div>
-                                <span class="price">{{(1-($favorite->discount)/100)*$favorite->price}}</span>تومان
+                                <span class="price">{{(1-($favorite->discount)/100)*$favorite->price}}</span> تومان
                             </div>
-                            {{-- <span class="price">۲۴۶,۰۰۰ تومان</span> --}}
+                            @elseif($favorite->discount == 0 && $favorite->price != 0)
+                                <span class="price">{{$favorite->price}} تومان</span>
+                            @elseif($favorite->price == 0)
+                            <span class="price">تماس بگیرید</span>
+                            @endif
+
                         </div>
                     <?php endforeach; ?>
 
