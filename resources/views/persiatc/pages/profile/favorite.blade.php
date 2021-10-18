@@ -22,10 +22,23 @@
                 <div class="wishlist-item-content">
                     <a href="{{ url('pro/'.$favorite->product->id) }}" class="title">{{$favorite->product->name}} </a>
                     <div class="wishlist-item-info">
-                        @if($favorite->discount != 0)
+                        {{-- @if($favorite->discount != 0)
                             <div class="c-checkout__price c-checkout__price--del">{{$favorite->price}} تومان </div>
                         @endif
-                        <span class="price">{{(1-($favorite->discount)/100)*$favorite->price}} تومان</span>
+                        <span class="price">{{(1-($favorite->discount)/100)*$favorite->price}} تومان</span> --}}
+
+                        @if($favorite->discount != 0 && $favorite->price != 0)
+                            <div class="inc-product-price">
+                                <del>{{$favorite->price}}</del>
+                                <div class="c-price__discount-oval"><span>{{$favorite->discount}}٪</span></div>
+                                <span class="price">{{(1-($favorite->discount)/100)*$favorite->price}}</span> تومان
+                            </div>
+                        @elseif($favorite->discount == 0 && $favorite->price != 0)
+                                <span class="price">{{$favorite->price}} تومان</span>
+                        @elseif($favorite->price == 0)
+                            <span style="color:red" class="price">برای اطلاع از قیمت هاتماس بگیرید.</span>
+                        @endif
+
                         <button class="btn-primary">مشاهده محصول</button>
                     </div>
                 </div>
