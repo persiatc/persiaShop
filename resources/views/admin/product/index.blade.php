@@ -64,7 +64,7 @@
                   {{-- <td>{{$product->producer->name}}</td> --}}
                   <td>{{$product->brand}}</td>
 
-                  <td>{{$product->body}}</td>
+                  <td>{!!$product->body!!}</td>
                   <td>{{number_format($product->price)}}</td>
                   <td>{{$product->discount}}</td>
                   <td>{{$product->status}}</td>
