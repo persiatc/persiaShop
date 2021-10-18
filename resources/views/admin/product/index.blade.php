@@ -62,7 +62,7 @@
                   <td class="sorting_1">{{$product->name}}</td>
                   <td>{{$product->category->fa_name}}</td>
                   {{-- <td>{{$product->producer->name}}</td> --}}
-                  <td>{{$product->brand}}</td>
+                  <td>{{$product->brand ?? $product->producer->name}}</td>
 
                   <td>{!!$product->body!!}</td>
                   <td>{{number_format($product->price)}}</td>
