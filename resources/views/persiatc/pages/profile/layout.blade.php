@@ -36,6 +36,8 @@
                     <li><a href="/factor" class="c-profile-menu__url c-profile-menu__url--gifts {{{ (Request::is('factor') ? 'is-active' : '') }}}">خریدهای انجام شده</a></li>
                     <li><a href="{{ route('factorfaild') }}" class="c-profile-menu__url c-profile-menu__url--notif {{{ (Request::is('factorfaild') ? 'is-active' : '') }}}">فاکتورهای پرداخت نشده</a></li>
                     <li><a href="/supportt" class="c-profile-menu__url c-profile-menu__url--notification {{{ (Request::is('supportt') ? 'is-active' : '') }}}">گزارش مشکلات</a></li>
+                    <li><a href="#" class="c-profile-menu__url c-profile-menu__url--orders">جزییات سفارش</a></li>
+
                 </ul>
             </div>
         </div>
