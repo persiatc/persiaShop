@@ -39,7 +39,7 @@
                             <span style="color:red" class="price">برای اطلاع از قیمت هاتماس بگیرید.</span>
                         @endif
 
-                        <button class="btn-primary">مشاهده محصول</button>
+                        <a href="{{ url('pro/'.$favorite->product->id) }}" class="btn-primary">مشاهده محصول</a>
                     </div>
                 </div>
             </li>
