@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="footer-contact">
-            <div class="contact"> <span>هفت روز هفته, ۲۴ ساعت شبانه روز پاسخگوی شما هستیم,</span> <span>شماره تماس : ۰۴۴-۳۳۳۳</span> <span>آدرس ایمیل : info@site.com</span></div>
+            <div class="contact"> <span>هفت روز هفته, ۲۴ ساعت شبانه روز پاسخگوی شما هستیم,</span> <span>شماره تماس  -۰۲۱۸۶۱۹۲۲۳  </span> <span>آدرس ایمیل : info@persiatc.com</span></div>
             {{-- <div class="app"> <img src="persiatc/assets/images/bazar.png" alt=""> <img src="persiatc/assets/images/sibapp.png" alt=""></div> --}}
         </div>
         <div class="copyright">
