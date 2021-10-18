@@ -1,5 +1,8 @@
 @extends('layouts.admin')
-
+@section('direction')
+{{-- <li><a href="#">مثال ها</a></li> --}}
+<li class="active">گالری محصولات </li>
+@endsection
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
 @endsection
