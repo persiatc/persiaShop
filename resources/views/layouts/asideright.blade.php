@@ -131,19 +131,6 @@
 
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-dashboard"></i> <span>مدیریت فاکتور ها</span>
-          <span class="pull-left-container">
-            <i class="fa fa-angle-right pull-left"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i>لیست فیلترها</a></li>
-            <li><a href=""><i class="fa fa-circle-o"></i>افزودن فیلتر جدید</a></li>
-        </ul>
-      </li>
-
-      <li class="treeview">
-        <a href="#">
           <i class="fa fa-image"></i> <span>مدیریت اسلایدشو</span>
           <span class="pull-left-container">
             <i class="fa fa-angle-right pull-left"></i>
@@ -156,6 +143,18 @@
             <li><a href="{{route('sliderparent.create')}}"><i class="fa fa-circle-o"></i>افزودن والد اسلایدر جدید</a></li>
         </ul>
       </li>
+
+      <li class="{{ (Request::is('slider.index') ? 'active' : '') }}">
+        <a href="">
+          <i class="fa fa-file-archive-o"></i>
+            <span>مدیریت فاکتور ها</span>
+          </i>
+        </a>
+      </li>
+
+
+
+
 
 
       {{-- <li class="treeview">
