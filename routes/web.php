@@ -41,6 +41,9 @@ Route::group([], function(){
     Route::resource('/factor', 'FactorController')->middleware('auth');
     Route::resource('/supportt', 'SupportController')->middleware('auth');
     Route::get('/download/{id}', 'DownloadController@download');
+
+    Route::get('/address', 'AddressController@index')->middleware('auth')->name('address.index');
+
 });
 
 //--------------------------- checkout route -------------------

@@ -28,7 +28,7 @@
                 <ul class="c-profile-menu__items">
                     <li><a href="userpanel" class="c-profile-menu__url c-profile-menu__url--dashboard {{{ (Request::is('userpanel') ? 'is-active' : '') }}}">پروفایل</a></li>
                     <li><a href="useredit" class="c-profile-menu__url c-profile-menu__url--personal {{{ (Request::is('useredit') ? 'is-active' : '') }}}">ویرایش اطلاعات شخصی</a></li>
-                    <li><a href="#" class="c-profile-menu__url c-profile-menu__url--address {{{ (Request::is('addresses') ? 'is-active' : '') }}}">آدرس ها</a></li>
+                    <li><a href="{{ route('address.index') }}" class="c-profile-menu__url c-profile-menu__url--address {{{ (Request::is('address') ? 'is-active' : '') }}}">آدرس ها</a></li>
                     {{-- <li><a href="orders.html" class="c-profile-menu__url c-profile-menu__url--orders">همه سفارش ها</a></li> --}}
                     {{-- <li><a href="orders-return.html" class="c-profile-menu__url c-profile-menu__url--return ">درخواست مرجوعی</a></li> --}}
                     <li><a href="/favorite" class="c-profile-menu__url c-profile-menu__url--wishlist {{{ (Request::is('favorite') ? 'is-active' : '') }}}">لیست علاقه مندی ها</a></li>
