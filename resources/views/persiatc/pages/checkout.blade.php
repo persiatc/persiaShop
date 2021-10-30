@@ -83,7 +83,7 @@
                 <p class="c-checkout-shipment__invoice-type-info">شما می‌توانید فاکتور خرید را پس از تحویل سفارش از بخش جزییات سفارش در حساب کاربری خود دریافت کنید.</p>
             </div>
             <div class="c-checkout__to-shipping-sticky">
-                <a href="{{ route('') }}" class="c-checkout__to-shipping-link">ادامه فرایند خرید</a>
+                <a href="{{ route('payment') }}" class="c-checkout__to-shipping-link">ادامه فرایند خرید</a>
                 {{-- <div class="c-checkout__to-shipping-price-report">
                     <p>مبلغ قابل پرداخت</p>
                     <div class="c-checkout__to-shipping-price-report--price">۱۹۶,۷۰۰ <span>تومان</span></div>

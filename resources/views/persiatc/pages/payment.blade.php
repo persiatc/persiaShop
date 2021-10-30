@@ -4,7 +4,7 @@
 
 <header class="shipping">
     <div class="logo container">
-        <a href="#"><img src="assets/images/logo.svg"></a>
+        <a href="#"><img style="width: 90px;" src="/persiatc/banner/PersiaLogo.png"></a>
     </div>
 </header>
 <main class="main-cart container">
@@ -31,8 +31,8 @@
                     <div class="c-checkout-paymethod__options">
                         <div class="c-checkout-paymethod__providers">
                             <div class="c-checkout-paymethod__providers-arrow"></div>
-                            <label> <span class="c-ui-radio"> <input type="radio" cheked name="bank_id"> <span class="c-ui-radio__check"></span> </span> <span class="c-checkout-paymethod__source-title">بانک سامان</span> <img src="assets/images/samanbank.png" alt=""> </label>
-                            <label class="is-selected"> <span class="c-ui-radio"> <input type="radio" cheked name="bank_id"> <span class="c-ui-radio__check"></span> </span> <span class="c-checkout-paymethod__source-title">بانک ملت</span> <img src="assets/images/dpay.png" alt=""> </label>
+                            <label> <span class="c-ui-radio"> <input type="radio" cheked name="bank_id"> <span class="c-ui-radio__check"></span> </span> <span class="c-checkout-paymethod__source-title">بانک سامان</span> <img src="/persiatc/assets/images/samanbank.png" alt=""> </label>
+                            <label class="is-selected"> <span class="c-ui-radio"> <input type="radio" cheked name="bank_id"> <span class="c-ui-radio__check"></span> </span> <span class="c-checkout-paymethod__source-title">بانک ملت</span> <img src="/persiatc/assets/images/dpay.png" alt=""> </label>
                         </div>
                     </div>
                 </li>
@@ -49,7 +49,7 @@
                         </div>
                     </header>
                     <div class="c-checkout-order-summary__content">
-                        <div class="c-product-box"> <img src="assets/images/257887.jpg" alt="">
+                        <div class="c-product-box"> <img src="/persiatc//images/257887.jpg" alt="">
                             <h4>گوشی موبایل الفون</h4> <span>1 عدد</span></div>
                     </div>
                 </section>
