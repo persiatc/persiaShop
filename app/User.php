@@ -58,6 +58,14 @@ class User extends Authenticatable
         return $this->hasMany(Support::class);
     }
 
+    public function address(){
+        return $this->hasMany(Address::class);
+    }
+    public function activeAddress(){
+        return $this->hasMany(Address::class)->where('status', 1);
+    }
+
+
     /**
      * The attributes that should be hidden for arrays.
      *

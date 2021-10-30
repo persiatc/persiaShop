@@ -51,6 +51,54 @@
 
 
 
+    $('.btn-plus-plus-basket').on('click', function() {
+        var id = $(this).attr('data-id');
+        console.log(id);
+
+        $.ajax({
+            url: '/basket/plus',
+            type: 'post',
+            dataType: 'json',
+            data: { id: id },
+            success: function(data) {
+                if (data.basket_create == 'success') {
+                    // alert('محصول مورد نظر با موفقیت به سبد خرید اضافه شد');
+                    $('.cart-count').text(' ');
+                    $('.basket-count-change').text('' + data.count + '');
+                    location.reload();
+                } else if (data.exists == 'exists') {
+                    // alert('محصول مورد نظر قبلا در سبد خرید شما اضافه شده‌است');
+                }
+            }
+        });
+    });
+
+    $('.btn-minus-minus-basket').on('click', function() {
+        var id = $(this).attr('data-id');
+        console.log(id);
+
+        $.ajax({
+            url: '/basket/minus',
+            type: 'post',
+            dataType: 'json',
+            data: { id: id },
+            success: function(data) {
+                if (data.basket_create == 'success') {
+                    // alert('محصول مورد نظر با موفقیت به سبد خرید اضافه شد');
+                    $('.cart-count').text(' ');
+                    $('.basket-count-change').text('' + data.count + '');
+                    location.reload();
+                } else if (data.exists == 'exists') {
+                    console.log('done');
+                    location.reload();
+
+                    // alert('محصول مورد نظر قبلا در سبد خرید شما اضافه شده‌است');
+                }
+            }
+        });
+    });
+
+
     /*---------------------------------------------------
          Product Carousel Slider with Tab
     ----------------------------------------------------- */

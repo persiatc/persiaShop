@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Address;
 use Illuminate\Http\Request;
 
 class AddressController extends Controller
@@ -13,7 +14,8 @@ class AddressController extends Controller
      */
     public function index()
     {
-        return view('persiatc.pages.profile.address');
+        $addresses=Address::where('user_id', auth()->user()->id)->get();
+        return view('persiatc.pages.profile.address', compact('addresses'));
     }
 
     /**
@@ -34,7 +36,27 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(),[
+            'name'=>'required',
+            'mobile'=>'required',
+            'address'=>'required',
+            'code_posti'=>'required',
+            'city'=>'required',
+            'province'=>'required',
+          ]);
+          Address::where('user_id', auth()->user()->id)->update(['status'=> 0]);
+
+          $address = Address::create([
+            'name'=>$request['name'],
+            'mobile'=>$request['mobile'],
+            'address'=>$request['address'],
+            'code_posti'=>$request['code_posti'],
+            'city'=>$request['city'],
+            'province'=>$request['province'],
+            'user_id'=>auth()->user()->id
+
+          ]);
+          return redirect()->back();
     }
 
     /**
@@ -77,8 +99,9 @@ class AddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Address $address)
     {
-        //
+        $address->delete();
+        return redirect(route('address.index'));
     }
 }

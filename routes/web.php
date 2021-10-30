@@ -37,6 +37,12 @@ Route::resource('comment-post','CommentpostController');
 Route::group([], function(){
     Route::resource('/basket', 'BasketController')->middleware('auth');
 //  Route::get('/product', 'BasketController@store')->middleware('auth');
+    Route::post('/basket/plus', 'BasketController@addCount')->middleware('auth');
+    Route::post('/basket/minus', 'BasketController@minusCount')->middleware('auth');
+
+    Route::resource('/address', 'AddressController')->middleware('auth');
+
+
     Route::resource('/favorite', 'FavoriteController')->middleware('auth');
     Route::resource('/factor', 'FactorController')->middleware('auth');
     Route::resource('/supportt', 'SupportController')->middleware('auth');
@@ -50,6 +56,9 @@ Route::group([], function(){
 Route::get('factorfaild', 'FactorController@showFaild')->name('factorfaild');
 Route::get('do/payment/{id}', 'FactorController@do_payment_zarinpal_faild')->name('do.payment.faild');
 Route::get('payment/callback/{id}','FactorController@Zarinpal_callback')->name('payment.zarinpal.callback');
+
+
+Route::get('payment', 'FactorController@payment')->name('payment');
 
 
 

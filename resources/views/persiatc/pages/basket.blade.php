@@ -43,9 +43,9 @@
                                 <div class="c-checkout__col c-checkout__col--counter">
                                     <div class="c-cart-item__quantity-row">
                                         <div class="c-quantity-selector">
-                                            <button type="button" class="c-quantity-selector__add"><i class="fa fa-plus"></i></button>
-                                            <div class="c-quantity-selector__number">۱</div>
-                                            <button type="button" class="c-quantity-selector__add"><i class="fa fa-minus"></i></button>
+                                            <button type="button" class="c-quantity-selector__add btn-plus-plus-basket" data-id="{{$basket->id}}"> <i class="fa fa-plus"></i></button>
+                                            <div class="c-quantity-selector__number basket-count-change">{{ $basket->count }}</div>
+                                            <button type="button" class="c-quantity-selector__add btn-minus-minus-basket" data-id="{{$basket->id}}"><i class="fa fa-minus"></i></button>
 
                                             <form class="" action="{{route('basket.destroy', ['basket'=>$basket->id])}}" method="post">
                                                 {{csrf_field()}}

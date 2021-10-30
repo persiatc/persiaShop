@@ -26,19 +26,20 @@
                 <div id="user-default-address-container" class="c-checkout-contact is-completed">
                     <div class="c-checkout-contact__content">
                         <ul class="c-checkout-contact__items">
-                            <li class="c-checkout-contact__item c-checkout-contact__item--username"> <span>گیرنده : حسن شفیعی</span>
-                                <button class="c-checkout-contact__btn-edit">اصلاح این آدرس</button>
+                            <li class="c-checkout-contact__item c-checkout-contact__item--username"> <span>گیرنده : {{auth()->user()->activeAddress->first()->name}} </span>
+                                {{-- <button class="c-checkout-contact__btn-edit">اصلاح این آدرس</button> --}}
                             </li>
                             <li class="c-checkout-contact__item c-checkout-contact__item--location">
-                                <div class="c-checkout-contact__item c-checkout-contact__item--mobile"> <span>شماره تماس : ۰۹۱۲۶۲۶۲۶۲۶</span></div>
-                                <div class="c-checkout-contact__item--message"><span>کد پستی : ۹۱۹۹۶۰</span></div>
-                                <br> <span class="full-address">تهران - ورودی اول - ترمینال - پارک - پلاک</span></li>
+                                <div class="c-checkout-contact__item c-checkout-contact__item--mobile"> <span>شماره تماس : {{auth()->user()->activeAddress->first()->mobile}}</span></div>
+                                <div class="c-checkout-contact__item--message"><span>کد پستی : {{auth()->user()->activeAddress->first()->code_posti}}</span></div>
+                                <br> <span class="full-address">{{auth()->user()->activeAddress->first()->province}} -  {{auth()->user()->activeAddress->first()->city}} - {{auth()->user()->activeAddress->first()->address}} </span></li>
                         </ul>
                         <div class="c-checkout-contact__badge"></div>
                     </div>
-                    <button id="change-sh-address" class="c-checkout-contact__location">تغییر آدرس ارسال</button>
+                    <a id="change-sh-address" href="{{ route('address.index') }}" class="c-checkout-contact__location">ثبت آدرس جدید</a>
                 </div>
             </div>
+
             <?php
             $discount = 0;
             $sum = 0;
@@ -82,7 +83,7 @@
                 <p class="c-checkout-shipment__invoice-type-info">شما می‌توانید فاکتور خرید را پس از تحویل سفارش از بخش جزییات سفارش در حساب کاربری خود دریافت کنید.</p>
             </div>
             <div class="c-checkout__to-shipping-sticky">
-                <a href="#" class="c-checkout__to-shipping-link">ادامه فرایند خرید</a>
+                <a href="{{ route('') }}" class="c-checkout__to-shipping-link">ادامه فرایند خرید</a>
                 {{-- <div class="c-checkout__to-shipping-price-report">
                     <p>مبلغ قابل پرداخت</p>
                     <div class="c-checkout__to-shipping-price-report--price">۱۹۶,۷۰۰ <span>تومان</span></div>
@@ -98,7 +99,7 @@
             <div class="c-checkout-summary">
                 <ul class="c-checkout-summary__summary">
                     <li>
-                    <span>قیمت کالاها (۱)</span>
+                    <span>قیمت کالاها ()</span>
                     <span> {{$sum}} تومان </span>
                     </li>
                     <!--incredible-->
@@ -144,7 +145,7 @@
         </div>
     </aside>
 </main>
-<div class="modal-checkout container" id="address-modal">
+{{-- <div class="modal-checkout container" id="address-modal">
     <div class="container">
         <div class="c-form-checkout__headline">افزودن آدرس جدید</div>
         <form>
@@ -188,6 +189,6 @@
         </form>
     </div>
     <button class="close-modal"><i class="fa fa-plus"></i></button>
-</div>
+</div> --}}
 
 @endsection

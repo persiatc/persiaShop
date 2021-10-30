@@ -16,7 +16,7 @@ class FavoriteController extends Controller
     public function index()
     {
         $favorites=Favorite::where('user_id', auth()->user()->id)->get();
-      return view('persiatc.pages.profile.favorite', compact('favorites'));
+        return view('persiatc.pages.profile.favorite', compact('favorites'));
     }
 
     /**

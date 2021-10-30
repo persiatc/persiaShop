@@ -108,4 +108,39 @@ class BasketController extends Controller
       $basket->delete();
       return redirect(route('basket.index'));
     }
+
+    public function addCount(Request $request)
+    {
+        $id=$request->input('id');
+        $basket = Basket::find($id);
+        $i = ++$basket->count;
+        $basket->update([
+            'count'=> $i,
+        ]);
+
+        return response()->json(['basket_create'=>'success','count'=>$basket['count']]);
+
+    }
+
+    public function minusCount(Request $request)
+    {
+        $id=$request->input('id');
+        $basket = Basket::find($id);
+        if($basket->count > 1)
+        {
+            $i = --$basket->count;
+            $basket->update([
+                'count'=> $i,
+            ]);
+            return response()->json(['basket_create'=>'success','count'=>$basket['count']]);
+
+        } elseif($basket->count <= 1) {
+            $basket->delete();
+            return response()->json(['exists'=>'exists']);
+
+        }
+
+
+
+    }
 }

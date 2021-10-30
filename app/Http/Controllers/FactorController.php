@@ -22,6 +22,17 @@ class FactorController extends Controller
         return view('persiatc.pages.profile.factor', compact('factors'));
     }
 
+      /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function payment(Request $request)
+    {
+        // $baskets=Basket::where('user_id', auth()->user()->id)->where('status','=','0')->get();
+        return view('persiatc.pages.payment');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
