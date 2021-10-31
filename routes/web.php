@@ -88,6 +88,11 @@ Route::group(['namespace'=>'admin','middleware'=>['auth','UserLevel'],'prefix'=>
 
 
 
+    //factor
+    Route::get('factors/all', 'FactorController@showFactor')->name('factors.all');
+    Route::get('factors/location', 'FactorController@showFactorLocation')->name('factors.location');
+    Route::get('factors/payments', 'FactorController@payment')->name('factors.payments');
+
 
 
 });
@@ -105,21 +110,3 @@ Route::group(['middleware'=>['auth']],function(){
 //==================Ajax Routes End==========================
 
 
-
-// <IfModule mod_rewrite.c>
-//   RewriteEngine On
-//   RewriteRule ^(.*)$ public/$1 [L]
-// </IfModule>
-
-
-
-
-// RewriteBase /
-
-// RewriteCond %{HTTP_HOST} !^eshop.persiatelecom.ir
-// RewriteCond %{REQUEST_URI} !^public
-// RewriteRule ^(.*)$ public/$1 [L]
-
-// RewriteCond %{HTTP_HOST} ^eshop.persiatelecom.ir
-// RewriteCond %{REQUEST_URI} !^public
-// RewriteRule ^(.*)$ public/ [L]

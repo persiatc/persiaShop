@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Factor;
-use App\Product;
 use App\Basket;
+use App\Factor;
+use App\Address;
+use App\Product;
+use Zarinpal\Zarinpal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Zarinpal\Zarinpal;
 
 class FactorController extends Controller
 {
@@ -29,8 +30,8 @@ class FactorController extends Controller
      */
     public function payment(Request $request)
     {
-        // $baskets=Basket::where('user_id', auth()->user()->id)->where('status','=','0')->get();
-        return view('persiatc.pages.payment');
+        $baskets=Basket::where('user_id', auth()->user()->id)->where('status','=','0')->get();
+        return view('persiatc.pages.payment', compact('baskets'));
     }
 
     /**
@@ -61,6 +62,8 @@ class FactorController extends Controller
             $factor = Factor::create([
                 'user_id'=>auth()->user()->id,
                 'sum'=>0,
+                'address_id'=>Address::where('user_id', auth()->user()->id)->where('status', 1)->first()->id,
+                'payment_method'=>'zarinpal',
                 'status'=>'pending'
                 ]);
             $sum = 0;
@@ -77,8 +80,33 @@ class FactorController extends Controller
 
             $this->do_payment_zarinpal($factor);
         }
-        else{
+        elseif($request->payment_method == "location"){
 
+            $r = $request->all();
+            $ids = $r['request'];
+            $factor = Factor::create([
+                'user_id'=>auth()->user()->id,
+                'sum'=>0,
+                'address_id'=>Address::where('user_id', auth()->user()->id)->where('status', 1)->first()->id,
+                'payment_method'=>'location',
+                'status'=>'unpaid'
+                ]);
+            $sum = 0;
+            for ($id = 0; $id < sizeof($ids); $id++){
+                $basket = Basket::find($ids[$id]);
+                $product = Product::find($basket->product_id);
+                $product->increment('sales_number');
+                $sum += (1-$product->discount/100)*$product->price;
+                $basket->update(['status' => 1]);
+                $product->factor()->attach($factor);
+            }
+            $factor->update(['sum'=>$sum]);
+            $factors = Factor::where('id', $factor->id)->get();
+
+            return view('persiatc.pages.success', compact('factors', 'factor'));
+
+
+        }else{
             return back()->with('err','لطفا روش پرداخت رو تایید کنید !');
         }
     }
@@ -218,7 +246,7 @@ class FactorController extends Controller
 
             $factors = Factor::where('id', $factor->id)->where('status',"paid")->get();
             session('success','خرید شما انجام شد');
-            return view('site.factor', compact('factors'));
+            return view('persiatc.pages.success', compact('factors', 'factor'));
 
 
 
@@ -242,6 +270,7 @@ class FactorController extends Controller
                 $basket = Basket::where('product_id',$item->id)->where('status','1')->where('user_id',$user)->first();
                 $basket->delete();
             }
+            // return view('persiatc.pages.faild', compact( 'factor'))->with('err','پرداخت شما ناموفق بود!');
 
             return back()->with('err','پرداخت شما ناموفق بود!');
         }

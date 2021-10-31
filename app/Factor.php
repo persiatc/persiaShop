@@ -8,7 +8,7 @@ class Factor extends Model
 {
     // use SoftDeletes;
     protected $fillable = [
-        'user_id', 'sum', 'status',
+        'user_id', 'sum', 'status', 'address_id', 'payment_method'
     ];
     protected $dates = ['deleted_at'];
 
@@ -19,4 +19,8 @@ class Factor extends Model
     public function product(){
         return $this->belongsToMany(Product::class);
     }
+    public function address(){
+        return $this->belongsTo(Address::class);
+      }
+
 }

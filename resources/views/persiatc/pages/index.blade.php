@@ -8,18 +8,18 @@
     </div>-->
     <div id="mainslider" class="main-slider swiper-container">
         <div class="swiper-wrapper">
-            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner/Banner/B1.jpg)"> </a>
-            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner/Banner/B1.jpg)"> </a>
-            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner/Banner/B1.jpg)"> </a>
-            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner/Banner/B1.jpg)"> </a>
+            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner2/Banner-Bisim.jpg)"> </a>
+            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner2/Banner-HDD.jpg)"> </a>
+            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner2/Banner-Server.jpg)"> </a>
+            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner2/Banner-Switch.jpg)"> </a>
         </div>
         <div id="mslider-nbtn" class="swiper-button-next"></div>
         <div id="mslider-pbtn" class="swiper-button-prev"></div>
         <div class="swiper-pagination mainslider-btn"></div>
     </div>
     <aside class="c-adplacement">
-        <a href="#"><img src="persiatc/banner/Banner/01.jpg" alt=""></a>
-        <a href="#"><img src="persiatc/banner/Banner/02.jpg" alt=""></a>
+        <a href="#"><img src="persiatc/banner2/Left-Passive.jpg" alt=""></a>
+        <a href="#"><img src="persiatc/banner2/Left-Sensor.jpg" alt=""></a>
     </aside>
 </article>
 <div class="clear"></div>

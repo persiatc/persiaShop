@@ -144,14 +144,36 @@
         </ul>
       </li>
 
-      <li class="{{ (Request::is('slider.index') ? 'active' : '') }}">
-        <a href="">
+
+      <li class="{{ (Request::is('factors.location') ? 'active' : '') }}">
+        <a href="{{ route('factors.location') }}">
+          <i class="fa fa-money"></i>
+            <span> رزروهای پرداخت در محل </span>
+          </i>
+        </a>
+      </li>
+      <li class="{{ (Request::is('factors.payments') ? 'active' : '') }}">
+        <a href="{{ route('factors.payments') }}">
+          <i class="fa fa-usd"></i>
+            <span> پرداخت ها</span>
+          </i>
+        </a>
+      </li>
+      <li class="{{ (Request::is('factors.all') ? 'active' : '') }}">
+        <a href="{{ route('factors.all') }}">
           <i class="fa fa-file-archive-o"></i>
-            <span>مدیریت فاکتور ها</span>
+            <span> فاکتور ها</span>
           </i>
         </a>
       </li>
 
+      <li class="{{ (Request::is('slider.index') ? 'active' : '') }}">
+        <a href="">
+          <i class="fa  fa-truck"></i>
+            <span>  انبارداری</span>
+          </i>
+        </a>
+      </li>
 
 
 
