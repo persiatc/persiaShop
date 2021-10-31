@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 @section('direction')
 {{-- <li><a href="#">مثال ها</a></li> --}}
-<li class="active">لیست محصولات </li>
+<li class="active">لیست محصولات موجود در انبار </li>
 @endsection
 
 @section('content')
 <div class="box">
   <div class="box-header">
-    <h3 class="box-title">لیست محصولات وبسایت</h3>
+    <h3 class="box-title">لیست محصولات موجود در انبار</h3>
   </div>
   <!-- /.box-header -->
   <div class="box-body">
