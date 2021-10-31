@@ -5,11 +5,11 @@
             <div class="logo">
                 <a href="{{ url('/') }}"><img style="height: 50px;width:110px"  src="/persiatc/banner/PersiaLogo4.png"></a>
             </div>
-            {{-- <form action="">
+            <form action="">
                 {{csrf_field()}}
                 <button type="submit"><i class="fa fa-search"></i></button>
                 <input type="text"  name="name" placeholder="محصول مورد نظر">
-            </form> --}}
+            </form>
         </div>
         <div class="left-head">
             <div class="login-box">
@@ -74,7 +74,7 @@
             <li><a href="{{ Route('contactt.index') }}">تماس با ما</a></li>
             {{-- <li><a href="#">دیجی شاپ من</a></li>
             <li><a href="#">دیجی کلاب</a></li> --}}
-            <li><a href="#">سوالی دارید؟</a></li>
+            <li><a href="#">درباره ما </a></li>
         </ul>
         {{-- <ul class="promotion">
             <li><a href="#">لطفا شهر و استان خود را انتخاب کنید</a><i class="fa fa-map-marker"></i></li>
