@@ -18,7 +18,7 @@ class FactorController extends Controller
     }
     public function showFactorLocation()
     {
-        $factors = Factor::where('method_payment', 'location')->orderBy('created_at', 'DESC')->paginate();
+        $factors = Factor::where('payment_method', 'location')->orderBy('created_at', 'DESC')->paginate();
 
         return view('admin.factor.factor-location', compact('factors'));
     }
