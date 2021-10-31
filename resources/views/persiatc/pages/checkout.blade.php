@@ -26,13 +26,13 @@
                 <div id="user-default-address-container" class="c-checkout-contact is-completed">
                     <div class="c-checkout-contact__content">
                         <ul class="c-checkout-contact__items">
-                            <li class="c-checkout-contact__item c-checkout-contact__item--username"> <span>گیرنده : {{auth()->user()->activeAddress->first()->name}} </span>
+                            <li class="c-checkout-contact__item c-checkout-contact__item--username"> <span>گیرنده : {{auth()->user()->activeAddress->first()->name ?? ''}} </span>
                                 {{-- <button class="c-checkout-contact__btn-edit">اصلاح این آدرس</button> --}}
                             </li>
                             <li class="c-checkout-contact__item c-checkout-contact__item--location">
-                                <div class="c-checkout-contact__item c-checkout-contact__item--mobile"> <span>شماره تماس : {{auth()->user()->activeAddress->first()->mobile}}</span></div>
-                                <div class="c-checkout-contact__item--message"><span>کد پستی : {{auth()->user()->activeAddress->first()->code_posti}}</span></div>
-                                <br> <span class="full-address">{{auth()->user()->activeAddress->first()->province}} -  {{auth()->user()->activeAddress->first()->city}} - {{auth()->user()->activeAddress->first()->address}} </span></li>
+                                <div class="c-checkout-contact__item c-checkout-contact__item--mobile"> <span>شماره تماس : {{auth()->user()->activeAddress->first()->mobile ?? ''}}</span></div>
+                                <div class="c-checkout-contact__item--message"><span>کد پستی : {{auth()->user()->activeAddress->first()->code_posti ?? ''}}</span></div>
+                                <br> <span class="full-address">{{auth()->user()->activeAddress->first()->province ?? ''}} -  {{auth()->user()->activeAddress->first()->city ?? ''}} - {{auth()->user()->activeAddress->first()->address ?? ''}} </span></li>
                         </ul>
                         <div class="c-checkout-contact__badge"></div>
                     </div>
@@ -59,7 +59,7 @@
                             ?>
                             <div class="c-product-box c-product-box--compact">
                                 <a href="#" class="c-product-box__img"><img style="width:70px;height:70px" src="/{{$product->image}}" alt=""></a>
-                                <div class="c-product-box__title">{{$product->name}}</div>
+                                <div class="c-product-box__title">{{$product->name ?? ''}}</div>
                             </div>
                             <?php endforeach; ?>
                             {{-- <div class="c-product-box c-product-box--compact">
