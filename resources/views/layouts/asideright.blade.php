@@ -167,8 +167,8 @@
         </a>
       </li>
 
-      <li class="{{ (Request::is('slider.index') ? 'active' : '') }}">
-        <a href="">
+      <li class="{{ (Request::is('factors.anbar') ? 'active' : '') }}">
+        <a href="{{ route('factors.anbar') }}">
           <i class="fa  fa-truck"></i>
             <span>  انبارداری</span>
           </i>

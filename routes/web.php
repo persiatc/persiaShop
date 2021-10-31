@@ -92,6 +92,7 @@ Route::group(['namespace'=>'admin','middleware'=>['auth','UserLevel'],'prefix'=>
     Route::get('factors/all', 'FactorController@showFactor')->name('factors.all');
     Route::get('factors/location', 'FactorController@showFactorLocation')->name('factors.location');
     Route::get('factors/payments', 'FactorController@payment')->name('factors.payments');
+    Route::get('factors/anbar', 'FactorController@anbar')->name('factors.anbar');
 
 
 
