@@ -13,7 +13,7 @@
             <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner2/Banner-Server.jpg)"> </a>
             <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(persiatc/banner2/Banner-Switch.jpg)"> </a>
         </div>
-        <div id="mslider-nbtn" class="swiper-button-next"></div>
+        <div id="mslider-nbtn" class="swiper-button-"></div>
         <div id="mslider-pbtn" class="swiper-button-prev"></div>
         <div class="swiper-pagination mainslider-btn"></div>
     </div>
