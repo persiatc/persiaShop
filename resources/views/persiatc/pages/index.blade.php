@@ -4,7 +4,7 @@
 <style>
 
 .main-slider .slide-item{
-    height: 620px;
+    height: 590px;
 }
 </style>
 @endsection
