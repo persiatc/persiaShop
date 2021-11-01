@@ -50,7 +50,7 @@
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 68.7833px;" aria-label="تخفیف: activate to sort column ascending">تخفیف</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 73.35px;" aria-label="وضعیت محصول: activate to sort column ascending">وضعیت محصول</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 73.35px;" aria-label="تعداد فروش: activate to sort column ascending">تعداد فروش</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 73.35px;" aria-label="تعداد فروش: activate to sort column ascending">تعداد بازدید</th>
+                {{-- <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 73.35px;" aria-label="تعداد فروش: activate to sort column ascending">تعداد بازدید</th> --}}
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 73.35px;" aria-label="تعداد فروش: activate to sort column ascending">تعداد موجود</th>
 
                 {{-- <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 73.35px;" aria-label="تصویر: activate to sort column ascending">تصویر</th>
@@ -75,7 +75,7 @@
                   <td>{{$product->discount}}</td>
                   <td>{{$product->status}}</td>
                   <td>{{$product->sales_number}}</td>
-                  <td>{{$product->download_number}}</td>
+                  {{-- <td>{{$product->download_number}}</td> --}}
                   <td>{{$product->number}}</td>
 
                   {{-- <td>
