@@ -103,9 +103,9 @@
           </span>
         </a>
         <ul class="treeview-menu">
-            @can('comment_list')
+            {{-- @can('comment_list') --}}
                 <li class="{{ (Request::is('admin/comment') ? 'active' : '') }}"><a href="{{route('comment.index')}}"><i class="fa fa-circle-o"></i>مشاهده نظرات</a></li>
-            @endcan
+            {{-- @endcan --}}
             <li class="{{ (Request::is('admin/contact') ? 'active' : '') }}"><a href="{{route('contact.index')}}"><i class="fa fa-circle-o"></i>مشاهده پیام‌های ارتباط با ما</a></li>
             <li class="{{ (Request::is('admin/support') ? 'active' : '') }}"><a href="{{route('support.index')}}"><i class="fa fa-circle-o"></i>مشاهده پیام‌های پشتیبانی</a></li>
         </ul>
@@ -145,21 +145,21 @@
       </li>
 
 
-      <li class="{{ (Request::is('factors.location') ? 'active' : '') }}">
+      <li class="{{ (Request::is('admin/factors/location') ? 'active' : '') }}">
         <a href="{{ route('factors.location') }}">
           <i class="fa fa-money"></i>
             <span> رزروهای پرداخت در محل </span>
           </i>
         </a>
       </li>
-      <li class="{{ (Request::is('factors.payments') ? 'active' : '') }}">
+      <li class="{{ (Request::is('admin/factors/payments') ? 'active' : '') }}">
         <a href="{{ route('factors.payments') }}">
           <i class="fa fa-usd"></i>
             <span> پرداخت ها</span>
           </i>
         </a>
       </li>
-      <li class="{{ (Request::is('factors.all') ? 'active' : '') }}">
+      <li class="{{ (Request::is('admin/factors/all') ? 'active' : '') }}">
         <a href="{{ route('factors.all') }}">
           <i class="fa fa-file-archive-o"></i>
             <span> فاکتور ها</span>
@@ -167,7 +167,7 @@
         </a>
       </li>
 
-      <li class="{{ (Request::is('factors.anbar') ? 'active' : '') }}">
+      <li class="{{ (Request::is('admin/factors/anbar') ? 'active' : '') }}">
         <a href="{{ route('factors.anbar') }}">
           <i class="fa  fa-truck"></i>
             <span>  انبارداری</span>
