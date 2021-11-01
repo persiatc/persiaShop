@@ -1,5 +1,14 @@
 @extends('persiatc.layouts.master', ['title'=> 'فروشگاه اینترنتی'])
 
+@section('css')
+<style>
+
+.main-slider .slide-item{
+    height: 620px;
+}
+</style>
+@endsection
+
 @section('content')
 
 <article class="main-article">
