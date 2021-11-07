@@ -4,7 +4,7 @@
 <style>
 
 .main-slider .slide-item{
-    height: 590px;
+    /* height: 590px; */
 }
 </style>
 @endsection
@@ -17,7 +17,7 @@
     </div>-->
     <div id="mainslider" class="main-slider swiper-container">
         <div class="swiper-wrapper">
-            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(/persiatc/banner2/Banner-Bisim.jpg)"> </a>
+            <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(/persiatc/banner2/Banner-Bisim2.jpg)"> </a>
             <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(/persiatc/banner2/Banner-HDD.jpg)"> </a>
             <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(/persiatc/banner2/Banner-Server.jpg)"> </a>
             <a href="#" target="_blank" class="slide-item swiper-slide" style="background-image: url(/persiatc/banner2/Banner-Switch.jpg)"> </a>
