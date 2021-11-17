@@ -122,9 +122,9 @@
       <!-- /.box -->
 
 
-      <div class="row">
+      {{-- <div class="row"> --}}
 
-        <div class="col-md-10">
+        {{-- <div class="col-md-10"> --}}
           <!-- USERS LIST -->
           <div class="box box-danger">
             <div class="box-header with-border">
@@ -162,9 +162,9 @@
             <!-- /.box-footer -->
           </div>
           <!--/.box -->
-        </div>
+        {{-- </div> --}}
         <!-- /.col -->
-      </div>
+      {{-- </div> --}}
       <!-- /.row -->
 
 

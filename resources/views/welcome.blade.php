@@ -79,7 +79,8 @@
                         <div class="product">
                             <a href="{{ url('pro/'.$favorite->id) }}" class="img-prod"><img class="img-fluid" style="height:60vh; width:100%;"src="/{{$favorite->image}}" alt="{{$favorite->name}}">
                               <?php if ($favorite->discount != 0): ?>
-                                <span class="status">{{$favorite->discount}}%</span>
+                                <span class=".
+                                ">{{$favorite->discount}}%</span>
                               <?php endif; ?>
                                 <div class="overlay"></div>
                             </a>
